@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 20</title>
+</head>
+<body>
+    <script>
+        //20. Escribe un programa que pida un número de minutos y muestre cuantos años y días son.
+        let minutos =parseInt(window.prompt("introduce el numero de minutos: "))
+        let años = parseInt(minutos/525600)
+        let dias = parseInt(((minutos/525600)-años)*365)
+        console.log(`${minutos} minutos equivalen a ${años} años y ${dias} dias`)
+    </script>
+</body>
+</html>
