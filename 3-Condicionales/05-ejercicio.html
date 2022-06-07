@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        /*5. Pide al usuario que escriba un día de la semana (lunes, martes…). Mostrar en
+pantalla el día que dice que es si es entre lunes y viernes (Por ejemplo "Hoy es
+lunes") y si es fin de semana mostrar "Es fin de semana". Hazlo una vez usando
+switch y otra con if else.*/
+    let dia= window.prompt("introduce un dia de la semana: ").toLowerCase()
+    switch (dia) {
+        case "lunes":
+        case "martes":
+        case "miercoles":
+        case "jueves":
+        case "viernes":
+            window.alert(`hoy es ${dia}`)
+            break
+        case "sabado":
+        case "domingo":
+            window.alert("Es fin de semana")
+            break
+        default:
+            window.alert("Eso no es un dia de la semana")
+    }
+
+    let dia2= window.prompt("introduce un dia de la semana: ").toLowerCase()
+    if (dia2=="lunes"||dia2=="martes"||dia2=="miercoles"||dia2=="miércoles"||dia2=="jueves"||dia2=="viernes") {
+        console.log(`Es ${dia}`)
+    }else if (dia2=="sabado"||dia2=="sábado"||dia2=="domingo") {
+        console.log("Es fin de semana!")
+    }else{
+        console.log("Eso no es un dia de la semana")
+    }
+        
+        
+    </script>
+</body>
+</html>

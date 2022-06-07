@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+</head>
+<body>
+    <script>
+        /*19. En una clase tienes tres exámenes, con un valor de 5 puntos máximo en cada uno.
+La nota final es la mejor nota de los dos primeros exámenes más la nota del tercer
+examen. Crea un programa que con tres notas calcula el resultado de nota final con
+los siguientes rangos:
+a. 10 es matrícula
+b. 9 y hasta 10 es sobresaliente
+c. 7 y hasta 9 es notable
+d. 6 y hasta 7 es bien
+e. 5 y hasta 6 es suficiente
+f. 0 hasta 5 es suspenso*/
+        let examen1 = parseInt(window.prompt("Introduce la nota del primer examen: "))
+        let examen2 = parseInt(window.prompt("Introduce la nota del segundo examen: "))
+        let examen3 = parseInt(window.prompt("Introduce la nota del tercer examen: "))
+        
+        let resultado = (examen1 > examen2? examen1:examen2)+examen3
+
+        switch(resultado) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                console.log("Suspenso")
+                break
+            case 5:
+                console.log("Suficiente")
+                break                
+            case 6:
+                console.log("Bien")
+                break                
+            case 7:  
+            case 8:
+                console.log("Notable")
+                break
+            case 9:
+                console.log("Sobresaliente")
+                break
+            default:
+                console.log("Matricula")
+                
+        }
+
+    </script>
+</body>
+</html>

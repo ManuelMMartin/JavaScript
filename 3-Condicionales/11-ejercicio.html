@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <script>
+        /* en clase 11. Escribe un programa que pida dos números enteros entre 25 y 75 y que diga si hay
+un dígito en común entre los dos números.*/
+    let num1= window.prompt("introduce un numero entero mayor de 25 y menor de 75: ")
+    let num2= window.prompt("introduce otro numero entero mayor de 25 y menor de 75: ")
+    
+    let digi11 = num1.substring(0,1)
+    let digi12 = num1.substring(1)
+    let digi21 = num2.substring(0,1)
+    let digi22 = num2.substring(1)
+
+    if (digi11 === digi21 || digi11 === digi22 || digi12 === digi21 || digi12 === digi22) {
+        console.log("Hay dos digitos en comun")
+    }/*else {
+        console.log("No hay digitos en comun")
+    }*/
+
+    </script>
+</body>
+</html>
