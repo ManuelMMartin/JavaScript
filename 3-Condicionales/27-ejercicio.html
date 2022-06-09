@@ -13,6 +13,24 @@ inicial y pide al usuario que seleccione una opción para continuar con la histo
 Según la opción que elija el usuario, muestra un texto diferente para cada una de las
 opciones y ofrece otras 2 opciones al usuario.*/
 
+        let opcion = window.prompt('Por fin parece que vislumbras el final de este oscuro bosque, pero tras un arbol ves un ogro con cara de pocos amigos... ¿que haras?\nA) Te escondes, quizas no te ha visto\nB) Saludas como si nada y sigues tu camino...').toUpperCase()
+
+        if (opcion === "A") {
+            let opcion2 = window.prompt('De momento parece que estas a salvo, pero en cualquier momento eso puede cambiar ¿Que hacemos?\nA) Vuelvo por donde he venido\nB) Con sigilo intento sortearlo.').toUpperCase()
+            if (opcion2 ==="A") {
+                window.alert('Se acabo tu gran aventura, veras cuando lo cuentes en la taberna...\nFIN')
+            }else {
+                window.alert('Pasas de puntillas tras el ogro... pero...NO HA SIDO UNA BUENA IDEA! puede olerte! y en cuanto el agua entre en ebullición podra saborearte... \nHAS MUERTO')
+            }
+
+        }else if (opcion === "B") {
+            let opcion2 = window.prompt('Parece que funciona, te devuelve el saludo y sigue a lo suyo... pero no estas tranquilo... ¿Que haras?\nA) Pies para que os quiero, corres como si tu vida dependiera de ello\nB) Sigues andando sin mirar atras.').toUpperCase()
+            if (opcion2 === "A" ) {
+                window.alert('El ogro se da cuenta y se siente ofendido, se levanta y corre detras de ti, en tres zancadas te ha alcanzado, alza su garrote y...\nHAS MUERTO')
+            }else {
+                window.alert('Genial, has atravesado el bosque y podras continuar tu aventura.\nFIN')
+            }
+        }
         
     </script>
 </body>

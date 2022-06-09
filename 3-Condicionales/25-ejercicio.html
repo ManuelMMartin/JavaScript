@@ -23,12 +23,12 @@ decir nada una cadena de texto vacía)*/
 
         let frase = window.prompt("Habla con Bob: ")
 
-        if (frase.indexOf("!")!=(-1)) {
-            window.alert("¡Eh!, tranquilízate.")
+        if (frase.indexOf("?")!=(-1) && (frase.indexOf("!")!=(-1))) {
+            window.alert("¡Eh, tranquilízate! Yo sé lo que hago.")
         }else if (frase.indexOf("?")!=(-1)) {
             window.alert("¡Claro!")
-        }else if (frase.indexOf("?")!=(-1) && (frase.indexOf("!")!=(-1))) {
-            window.alert("¡Eh, tranquilízate! Yo sé lo que hago.")
+        }else if  (frase.indexOf("!")!=(-1)) {
+            window.alert("¡Eh!, tranquilízate.")
         }else if (frase==='') {
             window.alert("Vale con que esas tenemos...")
         }else {

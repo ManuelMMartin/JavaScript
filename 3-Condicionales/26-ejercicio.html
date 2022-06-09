@@ -8,14 +8,54 @@
 </head>
 <body>
     <script>
-        /*26. Haz un programa que sea el juego de piedra-papel-tijera. Pide al usuario que
-seleccione una de las 3 posibilidades y haz que el programa seleccione una de las 3
-posibilidades de manera aleatoria. Dependiendo del resultado, muestra el mensaje
-correspondiente. Mira en los siguientes enlaces cómo crear números aleatorios:
-a. https://www.w3schools.com/jsref/jsref_random.asp
-b. https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_glo
-bales/Math/random*/
+        /*26. Haz un programa que sea el juego de piedra-papel-tijera. Pide al usuario que seleccione una de las 3 posibilidades y haz que el programa seleccione una de las 3 posibilidades de manera aleatoria. Dependiendo del resultado, muestra el mensaje correspondiente. Mira en los siguientes enlaces cómo crear números aleatorios:
+        a. https://www.w3schools.com/jsref/jsref_random.asp
+        b. https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math/random*/
 
+        let opcion = window.prompt("selecciona:\nA = Piedra\nB = Papel\nC = Tijeras").toUpperCase()
+        let random = parseInt(Math.random()*3+1)
+        
+        let A = "Piedra"
+        let B = "Papel"
+        let C = "Tijeras"
+
+        if (opcion === "A" ) {
+            opcion = A
+        }else if (opcion === "B" ) {
+            opcion = B
+        }else if (opcion === "C" ) {
+            opcion = C
+        }
+
+        if (random === 1 ) {
+            random = A
+        }else if (random === 2 ) {
+            random = B
+        }else if (random === 3 ) {
+            random = C
+        }
+              
+        if (opcion === A && random === B) {
+            window.alert(`${A} pierde ante ${B} PIERDES!`)
+        }else if (opcion === A && random === C) {
+            window.alert(`${A} aplasta ${C} GANAS`)
+        }else if (opcion === B && random === A) {
+            window.alert(`${B} envuelve ${A} GANAS`)
+        }else if (opcion === B && random === C) {
+            window.alert(`${B} es cortado por ${C} PIERDES!`)
+        }else if (opcion === C && random === A) {
+            window.alert(`${C} es aplastado por ${A} PIERDES!`)
+        }else if (opcion === C && random === B) {
+            window.alert(`${C} corta ${B} GANAS`)
+        }else if (opcion === A && random === A) {
+            window.alert(`Empate!`)
+        }else if (opcion === B && random === B) {
+            window.alert(`Empate!`)
+        }else if (opcion === C && random === C) {
+            window.alert(`Empate!`)
+        }else {
+            window.alert("eso no es una opcion")
+        }
         
     </script>
 </body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 28</title>
+</head>
+<body>
+    <script>
+        /*1. El usuario tiene dos hijos. Pregúntale la edad del mayor
+         y los años de diferencia entre el mayor y el menor.
+          Muestra en pantalla si el menor es mayor de edad o no.*/
+
+        let edad = parseInt(window.prompt("¿Cuantos años tiene tu hijo mayor?"))
+        let diferencia = parseInt(window.prompt("¿Cuantos años se lleva con tu hijo menor?"))
+        let pequeño = edad-diferencia
+        if (pequeño >= 18) {
+            console.log('Tu hijo menor ya no es tan menor...')
+        }else {
+            console.log('aun es un pipiolo')
+        }
+        
+    </script>
+</body>
+</html>
