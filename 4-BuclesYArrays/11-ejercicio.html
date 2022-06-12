@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio 11</title>
+</head>
+<body>
+	<script>
+		/*11. Escribe un programa que muestre el número entero positivo que el usuario introduzca
+pero al revés (si introduce 1478 que muestre 8741), hasta que el usuario introduzca 0. Si
+introduce 0 la primera vez, debería mostrarlo al revés (es decir, mostrar 0) y acabar el
+programa.*/
+		
+		let num = window.prompt('Introduce un numero')
+		let inv =''
+		if (num === '0') {
+			console.log('0')
+		}else {
+		for (i =num.length - 1; i>= 0;i--) {
+			inv += num[i]
+			
+			}console.log(inv)
+		}
+	</script>
+</body>
+</html>

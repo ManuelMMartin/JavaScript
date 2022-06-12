@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <script>
+        /* 13. Se desea conocer el lucky number (número de la suerte) de cualquier persona. El
+número de la suerte se consigue reduciendo la fecha de nacimiento a un número de un
+solo dígito. Por ejemplo, la fecha de nacimiento de Emma es la siguiente: 16-08-1973
+16+8+1973=1997 1+9+9+7=26 2+6=8. El número de la suerte de Emma será el 8.*/
+    let fecha = window.prompt('Introduce tu fecha de nacimiento (00/00/0000): ')
+    let num = (parseInt(fecha.substring(0,2)))+(parseInt(fecha.substring(3,5)))+(parseInt(fecha.substring(6))).toString()
+    let suma=0
+    let lucky=0
+    let num3 = 0
+    for (i =0; i<num.length;i++) {
+        suma += parseInt(num.substring(i,i+1))
+    }suma = suma.toString()
+    for (i =0; i<suma.length;i++) {
+        num3 += parseInt(suma.substring(i,i+1))
+    }
+    num3 = num3.toString()
+    for (i =0; i<num3.length;i++) {
+        lucky += parseInt(num3.substring(i,i+1))
+    }console.log(lucky)
+    
+    
+    </script>
+</body>
+</html>

@@ -12,10 +12,10 @@
 100 NO es bisiesto a no ser que se pueda dividir por 400. A partir de un año, mostrar
 en pantalla si es bisiesto o no.*/
 
-        let año = 2004
+        let año = 2007
         if (año%400===0) {
             console.log(`${año} es bisiesto`)
-        }else if (año%4===0) {
+        }else if (año%4===0 && año%100!=0) {
             console.log(`${año} es bisiesto`)
         }else {
             console.log(`${año} no es bisiesto`)

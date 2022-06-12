@@ -23,20 +23,20 @@ cliente que vaya a alquilar el coche y el coste total del alquiler.*/
             let carnet = window.prompt("¿Tienes carnet de conducir?(S/N): ").toUpperCase()
         if (carnet === "S") {
             let nombre = window.prompt("Introduce tu nombre: ")
-        let apellidos = window.prompt("Introduce tus apellidos: ")
-        let ciudad = window.prompt("Introduce la ciudad de recogida: ")
-        let dias = parseInt(window.prompt("Introduce cuantos dias alquilaras el vehiculo: "))
-        let precio
-        if (dias === 7) {
+            let apellidos = window.prompt("Introduce tus apellidos: ")
+            let ciudad = window.prompt("Introduce la ciudad de recogida: ")
+            let duracion = parseInt(window.prompt("Introduce cuantos duracion alquilaras el vehiculo: "))
+            let semanas = parseInt(duracion/7)
+        /*if (duracion === 7) {
             precio = 150
-        }else if (dias<7) {
-            precio = dias * 25
+        }else if (duracion<7) {
+            precio = duracion * 25
         }else {
-            precio = 150+(dias-7)*25
+            precio = 150+(duracion-7)*25
         }
 
-        window.alert(`Nombre: ${nombre}\nApellidos: ${apellidos}\nCiudad de  recogida: ${ciudad}\nPrecio: ${precio}€`)
-            
+        window.alert(`Nombre: ${nombre}\nApellidos: ${apellidos}\nCiudad de  recogida: ${ciudad}\nPrecio: ${precio}€`)*/
+            window.alert(`Nombre: ${nombre}\nApellidos: ${apellidos}\nCiudad de  recogida: ${ciudad}\nPrecio:${semanas > 1 ? semanas * 150 + ((duracion - (semanas*7))*25): duracion*25}€`)
             
         }else {
             window.alert("No tienes reunes los requisitos para alquiler un coche")

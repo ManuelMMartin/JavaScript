@@ -20,7 +20,7 @@ usuario, y mostrar el número, seguido del mensaje "Todas las cifras son pares",
 
         if (cifra1%2===0 && cifra2%2===0 && cifra3%2===0) {
             console.log(`${numero} Todas las cifras son pares`)
-        }else if (cifra1%2===1 && cifra2%2===1 && cifra3%2===1) {
+        }else if (cifra1%2!=0 && cifra2%2!=0 && cifra3%2!=0) {
             console.log(`${numero} Todas las cifras son impares`)
         }else {
             console.log(`${numero} El número tiene cifras pares e impares`)
