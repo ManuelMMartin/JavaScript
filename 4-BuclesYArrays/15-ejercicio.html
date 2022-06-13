@@ -16,17 +16,33 @@ que la contraseña sea correcta deberá cumplir estas directivas:
         
         let contraseña = window.prompt('Introduce una contraseña de al menos 8 caracteres: ')
         let numeros ='0123456789'
-        let letra = contraseña.substring(0,1).toUpperCase()
+        let letra = contraseña.substring(0,1).toUpperCase() 
         let longitud = contraseña.length
-        if (longitud <8 ) {
+        let contador = false
+        let num
+        let char
+
+        for (i=0;i<numeros.length;i++) {
+                num = numeros.substring(i,i+1)
+                for (let j =0; j< contraseña.length; j++) {
+                    char=contraseña.substring(j,j+1) 
+                    if (num==char) {
+                        console.log(num,char)
+                        contador=true
+                    }
+                }       
+        }
+            if (longitud <8 ) {
                 window.alert('La contraseña debe tener al menos 8 caracteres.')
-            }else if (numeros.indexOf(contraseña.charAt(),0)!=-1) {
-                window.alert('La contraseña debe tener al menos 1 numero.')
-            }else if (contraseña.substring(0,1) != letra) {
-                window.alert('La contraseña debe tener la primera letra en mayusculas.')
             }else {
-                window.alert('Contraseña guardada correctamente.')
-            }   
+                if (contador != true){
+                    window.alert('La contraseña debe tener al menos 1 numero.')
+                }else if (contraseña.substring(0,1) != letra) {
+                    window.alert('La contraseña debe tener la primera letra en mayusculas.')
+                }else {
+                    window.alert('Contraseña guardada correctamente.')
+            }
+        }
         
         
     </script>
