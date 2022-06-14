@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+
+<body>
+    <script>
+        /*10. Crear un array con 11 ceros. Pedir al usuario que introduzca valores entre 0 y 10.
+Cada vez que introduzca un dígito, añadir uno al valor en esa posición del array. Si
+por ejemplo introduce un 3, sumar uno a la posición 3. Mostrar en pantalla los
+valores. Si introduce un número mayor que 10, decir que ese número es incorrecto.
+Si introduce un número negativo, mostrar en pantalla el número de cada posición y
+el valor que contiene. Por ejemplo, si introduce 7, 7, 7, 5, 6, 5, 9, 9, 10, -1 mostrar:PDF*/
+
+        let array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        let num = 1
+        do {
+            num = parseInt(window.prompt('Introduce un numero del 0 al 10: '))
+            console.log(array[num])
+            if (num >= 0 && num <= 10) {
+                array.splice(num, 1, array[num] + 1)
+            } else if (num > 10) {
+                console.log('Ese numero es incorrecto.')
+            }
+        } while (num >= 0)
+        console.log('Fin de la ejecucion')
+        for (let i = 0; i < array.length; i++) {
+            console.log(` ${array.length-array.length+i} ----- ${array[i]} `)
+        }
+
+    </script>
+</body>
+
+</html>

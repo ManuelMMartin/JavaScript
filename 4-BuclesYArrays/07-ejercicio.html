@@ -25,7 +25,18 @@ usuario introduzca un 0, entonces mostrar la suma de los valores introducidos.*/
             
         }window.alert(suma)
         
-        
+        //clase
+        let suma1 = 0
+        do {
+            let numero = parseInt(window.prompt('Introduce un numero'))
+
+            numero > 0
+            ? suma1+= numero
+            :numero === 0
+                ?window.alert (suma1)
+                :window.alert('No se aceptan numeros negativos.')
+
+        }while (numero!=0)
     
     
     </script>

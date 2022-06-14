@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 15</title>
 </head>
+
 <body>
     <script>
         /* 15. Escribe un programa el cual analizará si la contraseña introducida es correcta o no. Para
@@ -13,38 +15,48 @@ que la contraseña sea correcta deberá cumplir estas directivas:
 ● Debe tener 8 caracteres como mínimo.
 ● La contraseña deberá contener números. (buscar una función)
 ● La primera letra tiene que ser en mayúsculas.(buscar una función) */
-        
-        let contraseña = window.prompt('Introduce una contraseña de al menos 8 caracteres: ')
-        let numeros ='0123456789'
-        let letra = contraseña.substring(0,1).toUpperCase() 
-        let longitud = contraseña.length
+
+        let contrasena = window.prompt('Introduce una contrasena de al menos 8 caracteres: ')
+        let numeros = '0123456789'
+        let letra = contrasena.substring(0, 1).toUpperCase()
+        let longitud = contrasena.length
         let contador = false
         let num
         let char
 
-        for (i=0;i<numeros.length;i++) {
-                num = numeros.substring(i,i+1)
-                for (let j =0; j< contraseña.length; j++) {
-                    char=contraseña.substring(j,j+1) 
-                    if (num==char) {
-                        console.log(num,char)
-                        contador=true
-                    }
-                }       
-        }
-            if (longitud <8 ) {
-                window.alert('La contraseña debe tener al menos 8 caracteres.')
-            }else {
-                if (contador != true){
-                    window.alert('La contraseña debe tener al menos 1 numero.')
-                }else if (contraseña.substring(0,1) != letra) {
-                    window.alert('La contraseña debe tener la primera letra en mayusculas.')
-                }else {
-                    window.alert('Contraseña guardada correctamente.')
+        for (i = 0; i < numeros.length; i++) {
+            num = numeros.substring(i, i + 1)
+            for (let j = 0; j < contrasena.length; j++) {
+                char = contrasena.substring(j, j + 1)
+                if (num == char) {
+                    console.log(num, char)
+                    contador = true
+                }
             }
         }
-        
-        
+        if (longitud < 8) {
+            window.alert('La contraseña debe tener al menos 8 caracteres.')
+        } else {
+            if (contador != true) {
+                window.alert('La contraseña debe tener al menos 1 numero.')
+            } else if (contrasena.substring(0, 1) != letra) {
+                window.alert('La contraseña debe tener la primera letra en mayusculas.')
+            } else {
+                window.alert('Contraseña guardada correctamente.')
+            }
+        }
+
+        // comprobar numero en clase
+        numero = false
+        for (let i = 0; i < 10; i++) {
+
+            if (contrasena.includes(i.ToString())) {
+                numero = true
+            }
+        }
+
+
     </script>
 </body>
+
 </html>

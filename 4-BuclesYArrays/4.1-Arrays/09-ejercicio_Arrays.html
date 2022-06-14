@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+
+<body>
+    <script>
+        /*9. Crear un array de 10 valores. Pon el valor 1 en cada una de las posiciones. Pedir al usuario que introduzca un número entre 0 y 9. Cada vez que introduzca un valor
+entre 0 y 9, mostrar el valor de esa posición del array, y modificarlo multiplicando por
+2. si introduce algo negativo cerramos el programa*/
+        let array = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        let num = 1
+        do {
+            num = parseInt(window.prompt('Introduce un numero del 0 al 9: '))
+            console.log(array[num])
+            if (num >= 0 && num < 10) {
+                array.splice(num, 1, array[num] * 2)
+            }
+        } while (num >= 0 && num < 10)
+        console.log('Fin de la ejecucion')
+        console.log(array)
+
+
+    </script>
+</body>
+
+</html>
