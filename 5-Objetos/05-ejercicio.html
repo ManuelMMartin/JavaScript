@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        let letraNombre = {
+            a: {
+                letra: "a",
+                masculino: "La bestia",
+                femenino: "La bestia",
+            },
+            b: {
+                letra: "b",
+                masculino: "Agente",
+                femenino: "Agente",
+            },
+            c: {
+                letra: "c",
+                masculino: "Gigante",
+                femenino: "Gigante",
+            },
+            d: {
+                letra: "d",
+                masculino: "Pokemon",
+                femenino: "Pokemon",
+            },
+            e: {
+                letra: "e",
+                masculino: "Dragón",
+                femenino: "Dragón",
+            },
+            f: {
+                letra: "f",
+                masculino: "Alien",
+                femenino: "Alien",
+            },
+            g: {
+                letra: "g",
+                masculino: "Fantasma",
+                femenino: "Fantasma",
+            },
+            h: {
+                letra: "h",
+                masculino: "Doctor",
+                femenino: "Doctora",
+            },
+            i: {
+                letra: "i",
+                masculino: "Genio",
+                femenino: "Genia",
+            },
+            j: {
+                letra: "j",
+                masculino: "Chico",
+                femenino: "Chica",
+            },
+            k: {
+                letra: "k",
+                masculino: "Príncipe",
+                femenino: "Princesa",
+            },
+            l: {
+                letra: "l",
+                masculino: "Hombre",
+                femenino: "Mujer",
+            },
+            m: {
+                letra: "m",
+                masculino: "Gatito",
+                femenino: "Gatita",
+            },
+            n: {
+                letra: "n",
+                masculino: "Borracho",
+                femenino: "Borracha",
+            },
+            o: {
+                letra: "o",
+                masculino: "Rey",
+                femenino: "Reina",
+            },
+            p: {
+                letra: "p",
+                masculino: "Robot",
+                femenino: "Robot",
+            },
+            q: {
+                letra: "q",
+                masculino: "Científico",
+                femenino: "Científica",
+            },
+            r: {
+                letra: "r",
+                masculino: "Samurai",
+                femenino: "Samurai",
+            },
+            s: {
+                letra: "s",
+                masculino: "Mole",
+                femenino: "Mole",
+            },
+            t: {
+                letra: "t",
+                masculino: "Loco",
+                femenino: "Loca",
+            },
+            u: {
+                letra: "u",
+                masculino: "Vigilante",
+                femenino: "Vigilante",
+            },
+            v: {
+                letra: "v",
+                masculino: "Guerrero",
+                femenino: "Guerrera",
+            },
+            w: {
+                letra: "w",
+                masculino: "León",
+                femenino: "Leona",
+            },
+            x: {
+                letra: "x",
+                masculino: "Ángel",
+                femenino: "Ángel",
+            },
+            y: {
+                letra: "y",
+                masculino: "Tigre",
+                femenino: "Tigresa",
+            },
+            z: {
+                letra: "z",
+                masculino: "Saiyajin",
+                femenino: "Saiyajin",
+            },
+        };
+
+        let letraApellido = {
+            a: {
+                letra: "a",
+                masculino: "indestructible",
+                femenino: "indestructible",
+            },
+            b: {
+                letra: "b",
+                masculino: "maravilla",
+                femenino: "maravilla",
+            },
+            c: {
+                letra: "c",
+                masculino: "radiactivo",
+                femenino: "radiactiva",
+            },
+            d: {
+                letra: "d",
+                masculino: "volador",
+                femenino: "voladora",
+            },
+            e: {
+                letra: "e",
+                masculino: "mágico",
+                femenino: "mágica",
+            },
+            f: {
+                letra: "f",
+                masculino: "salvaje",
+                femenino: "salvaje",
+            },
+            g: {
+                letra: "g",
+                masculino: "vengador",
+                femenino: "vengadora",
+            },
+            h: {
+                letra: "h",
+                masculino: "letal",
+                femenino: "letal",
+            },
+            i: {
+                letra: "i",
+                masculino: "poderoso",
+                femenino: "poderosa",
+            },
+            j: {
+                letra: "j",
+                masculino: "amoroso",
+                femenino: "amorosa",
+            },
+            k: {
+                letra: "k",
+                masculino: "oscuro",
+                femenino: "oscura",
+            },
+            l: {
+                letra: "l",
+                masculino: "fantástico",
+                femenino: "fantástica",
+            },
+            m: {
+                letra: "m",
+                masculino: "invencible",
+                femenino: "invencible",
+            },
+            n: {
+                letra: "n",
+                masculino: "valiente",
+                femenino: "valiente",
+            },
+            o: {
+                letra: "o",
+                masculino: "superveloz",
+                femenino: "superveloz",
+            },
+            p: {
+                letra: "p",
+                masculino: "invisible",
+                femenino: "invisible",
+            },
+            q: {
+                letra: "q",
+                masculino: "mutante",
+                femenino: "mutante",
+            },
+            r: {
+                letra: "r",
+                masculino: "tóxico",
+                femenino: "tóxica",
+            },
+            s: {
+                letra: "s",
+                masculino: "sexy",
+                femenino: "sexy",
+            },
+            t: {
+                letra: "t",
+                masculino: "asesino",
+                femenino: "asesina",
+            },
+            u: {
+                letra: "u",
+                masculino: "karateka",
+                femenino: "karateka",
+            },
+            v: {
+                letra: "v",
+                masculino: "galáctico",
+                femenino: "galáctica",
+            },
+            w: {
+                letra: "w",
+                masculino: "carismático",
+                femenino: "carismática",
+            },
+            x: {
+                letra: "x",
+                masculino: "violento",
+                femenino: "violenta",
+            },
+            y: {
+                letra: "y",
+                masculino: "nocturno",
+                femenino: "nocturna",
+            },
+            z: {
+                letra: "z",
+                masculino: "venenoso",
+                femenino: "venenosa",
+            },
+        };
+
+        let fechaNacimiento = {
+            num0: {
+                numero: 0,
+                masculino: "del espacio",
+                femenino: "del espacio",
+            },
+            num1: {
+                numero: 1,
+                masculino: "de la justicia",
+                femenino: "de la justicia",
+            },
+            num2: {
+                numero: 2,
+                masculino: "de Marvel",
+                femenino: "de Marvel",
+            },
+            num3: {
+                numero: 3,
+                masculino: "de las tinieblas",
+                femenino: "de las tinieblas",
+            },
+            num4: {
+                numero: 4,
+                masculino: "de fuego",
+                femenino: "de fuego",
+            },
+            num5: {
+                numero: 5,
+                masculino: "de la noche",
+                femenino: "de la noche",
+            },
+            num6: {
+                numero: 6,
+                masculino: "del futuro",
+                femenino: "del futuro",
+            },
+            num7: {
+                numero: 7,
+                masculino: "de acero",
+                femenino: "de acero",
+            },
+            num8: {
+                numero: 8,
+                masculino: "exterminador",
+                femenino: "exterminadora",
+            },
+            num9: {
+                numero: 9,
+                masculino: "de otro planeta",
+                femenino: "de otro planeta",
+            },
+        };
+
+        /*5. Vamos a hacer un generador de nombres de superhéroe. Pide al usuario la fecha de
+nacimiento, el nombre y el apellido. Muestra el nombre de superhéroe de la siguiente
+manera: la primera letra del nombre indicará la propiedad del objeto letraNombre
+que debes obtener, la última letra del apellido indicará la propiedad del objeto
+letraApellido que debes obtener y último número del año de la fecha de nacimiento
+indicará la propiedad del objeto fechaNacimiento que debes obtener. Pregúntale
+también al usuario si quiere el nombre masculino o femenino. Muestra el nombre
+conseguido.
+Por ejemplo, si yo me llamo “Rucesio”, mi nombre de superhéroe empezará con el
+valor de la propiedad ‘r’.*/
+        let fecha = window.prompt('Introduce tu fecha de nacimiento DD/MM/AAAA: ')
+        let nombre = window.prompt('Introduce tu nombre: ').toLowerCase()
+        let apellido = window.prompt('Introduce tu primer apellido: ').toLowerCase()
+        let genero = window.prompt('Introduce tu genero (masculino/femenino): ')
+        let letra = nombre.substring(0, 1)
+        let letra2 = apellido.substring(apellido.length - 1)
+        fecha = parseInt(fecha.substring(fecha.length - 1))
+        let nombreHeroe = ''
+        let nombreHeroe2 = ''
+        let nombreHeroe3 = ''
+        if (letra === letraNombre.a.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.a.masculino}`
+                : nombreHeroe += `${letraNombre.a.femenino}`
+        } else if (letra === letraNombre.b.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.b.masculino}`
+                : nombreHeroe += `${letraNombre.b.femenino}`
+        } else if (letra === letraNombre.c.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.c.masculino}`
+                : nombreHeroe += `${letraNombre.c.femenino}`
+        } else if (letra === letraNombre.d.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.d.masculino}`
+                : nombreHeroe += `${letraNombre.d.femenino}`
+        } else if (letra === letraNombre.e.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.e.masculino}`
+                : nombreHeroe += `${letraNombre.e.femenino}`
+        } else if (letra === letraNombre.f.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.f.masculino}`
+                : nombreHeroe += `${letraNombre.f.femenino}`
+        } else if (letra === letraNombre.g.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.g.masculino}`
+                : nombreHeroe += `${letraNombre.g.femenino}`
+        } else if (letra === letraNombre.h.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.h.masculino}`
+                : nombreHeroe += `${letraNombre.h.femenino}`
+        } else if (letra === letraNombre.i.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.i.masculino}`
+                : nombreHeroe += `${letraNombre.i.femenino}`
+        } else if (letra === letraNombre.j.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.j.masculino}`
+                : nombreHeroe += `${letraNombre.j.femenino}`
+        } else if (letra === letraNombre.k.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.k.masculino}`
+                : nombreHeroe += `${letraNombre.k.femenino}`
+        } else if (letra === letraNombre.l.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.l.masculino}`
+                : nombreHeroe += `${letraNombre.l.femenino}`
+        } else if (letra === letraNombre.m.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.m.masculino}`
+                : nombreHeroe += `${letraNombre.m.femenino}`
+        } else if (letra === letraNombre.n.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.n.masculino}`
+                : nombreHeroe += `${letraNombre.n.femenino}`
+        } else if (letra === letraNombre.o.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.o.masculino}`
+                : nombreHeroe += `${letraNombre.o.femenino}`
+        } else if (letra === letraNombre.p.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.p.masculino}`
+                : nombreHeroe += `${letraNombre.p.femenino}`
+        } else if (letra === letraNombre.q.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.q.masculino}`
+                : nombreHeroe += `${letraNombre.q.femenino}`
+        } else if (letra === letraNombre.r.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.r.masculino}`
+                : nombreHeroe += `${letraNombre.r.femenino}`
+        } else if (letra === letraNombre.s.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.s.masculino}`
+                : nombreHeroe += `${letraNombre.s.femenino}`
+        } else if (letra === letraNombre.t.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.t.masculino}`
+                : nombreHeroe += `${letraNombre.t.femenino}`
+        } else if (letra === letraNombre.u.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.u.masculino}`
+                : nombreHeroe += `${letraNombre.u.femenino}`
+        } else if (letra === letraNombre.v.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.v.masculino}`
+                : nombreHeroe += `${letraNombre.v.femenino}`
+        } else if (letra === letraNombre.w.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.w.masculino}`
+                : nombreHeroe += `${letraNombre.w.femenino}`
+        } else if (letra === letraNombre.x.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.x.masculino}`
+                : nombreHeroe += `${letraNombre.x.femenino}`
+        } else if (letra === letraNombre.y.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.y.masculino}`
+                : nombreHeroe += `${letraNombre.y.femenino}`
+        } else if (letra === letraNombre.z.letra) {
+            genero === 'masculino'
+                ? nombreHeroe += `${letraNombre.z.masculino}`
+                : nombreHeroe += `${letraNombre.z.femenino}`
+        }
+
+        if (letra2 === letraApellido.a.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.a.masculino}`
+                : nombreHeroe2 += `${letraApellido.a.femenino}`
+        } else if (letra2 === letraApellido.b.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.b.masculino}`
+                : nombreHeroe2 += `${letraApellido.b.femenino}`
+        } else if (letra2 === letraApellido.c.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.c.masculino}`
+                : nombreHeroe2 += `${letraApellido.c.femenino}`
+        } else if (letra2 === letraApellido.d.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.d.masculino}`
+                : nombreHeroe2 += `${letraApellido.d.femenino}`
+        } else if (letra2 === letraApellido.e.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.e.masculino}`
+                : nombreHeroe2 += `${letraApellido.e.femenino}`
+        } else if (letra2 === letraApellido.f.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.f.masculino}`
+                : nombreHeroe2 += `${letraApellido.f.femenino}`
+        } else if (letra2 === letraApellido.g.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.g.masculino}`
+                : nombreHeroe2 += `${letraApellido.g.femenino}`
+        } else if (letra2 === letraApellido.h.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.h.masculino}`
+                : nombreHeroe2 += `${letraApellido.h.femenino}`
+        } else if (letra2 === letraApellido.i.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.i.masculino}`
+                : nombreHeroe2 += `${letraApellido.i.femenino}`
+        } else if (letra2 === letraApellido.j.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.j.masculino}`
+                : nombreHeroe2 += `${letraApellido.j.femenino}`
+        } else if (letra2 === letraApellido.k.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.k.masculino}`
+                : nombreHeroe2 += `${letraApellido.k.femenino}`
+        } else if (letra2 === letraApellido.l.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.l.masculino}`
+                : nombreHeroe2 += `${letraApellido.l.femenino}`
+        } else if (letra2 === letraApellido.m.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.m.masculino}`
+                : nombreHeroe2 += `${letraApellido.m.femenino}`
+        } else if (letra2 === letraApellido.n.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.n.masculino}`
+                : nombreHeroe2 += `${letraApellido.n.femenino}`
+        } else if (letra2 === letraApellido.o.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.o.masculino}`
+                : nombreHeroe2 += `${letraApellido.o.femenino}`
+        } else if (letra2 === letraApellido.p.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.p.masculino}`
+                : nombreHeroe2 += `${letraApellido.p.femenino}`
+        } else if (letra2 === letraApellido.q.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.q.masculino}`
+                : nombreHeroe2 += `${letraApellido.q.femenino}`
+        } else if (letra2 === letraApellido.r.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.r.masculino}`
+                : nombreHeroe2 += `${letraApellido.r.femenino}`
+        } else if (letra2 === letraApellido.s.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.s.masculino}`
+                : nombreHeroe2 += `${letraApellido.s.femenino}`
+        } else if (letra2 === letraApellido.t.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.t.masculino}`
+                : nombreHeroe2 += `${letraApellido.t.femenino}`
+        } else if (letra2 === letraApellido.u.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.u.masculino}`
+                : nombreHeroe2 += `${letraApellido.u.femenino}`
+        } else if (letra2 === letraApellido.v.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.v.masculino}`
+                : nombreHeroe2 += `${letraApellido.v.femenino}`
+        } else if (letra2 === letraApellido.w.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.w.masculino}`
+                : nombreHeroe2 += `${letraApellido.w.femenino}`
+        } else if (letra2 === letraApellido.x.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.x.masculino}`
+                : nombreHeroe2 += `${letraApellido.x.femenino}`
+        } else if (letra2 === letraApellido.y.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.y.masculino}`
+                : nombreHeroe2 += `${letraApellido.y.femenino}`
+        } else if (letra2 === letraApellido.z.letra) {
+            genero === 'masculino'
+                ? nombreHeroe2 += `${letraApellido.z.masculino}`
+                : nombreHeroe2 += `${letraApellido.z.femenino}`
+        }
+
+        if (fecha === fechaNacimiento.num0.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num0.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num0.femenino}`
+        } else if (fecha === fechaNacimiento.num1.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num1.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num1.femenino}`
+        } else if (fecha === fechaNacimiento.num2.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num2.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num2.femenino}`
+        } else if (fecha === fechaNacimiento.num3.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num3.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num3.femenino}`
+        } else if (fecha === fechaNacimiento.num4.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num4.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num4.femenino}`
+        } else if (fecha === fechaNacimiento.num5.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num5.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num5.femenino}`
+        } else if (fecha === fechaNacimiento.num6.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num6.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num6.femenino}`
+        } else if (fecha === fechaNacimiento.num7.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num7.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num7.femenino}`
+        } else if (fecha === fechaNacimiento.num8.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num8.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num8.femenino}`
+        } else if (fecha === fechaNacimiento.num9.numero) {
+            genero === 'masculino'
+                ? nombreHeroe3 += `${fechaNacimiento.num9.masculino}`
+                : nombreHeroe3 += `${fechaNacimiento.num9.femenino}`
+        }
+
+        window.alert(`${nombreHeroe} ${nombreHeroe2} ${nombreHeroe3}`)
+
+
+
+
+    </script>
+</body>
+
+</html>
