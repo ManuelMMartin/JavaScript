@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <script>
+        /*6. Escribe un programa que pida al usuario dos números. Usa esos 2 números en una
+función que divide el primero por el segundo y devuelve el resultado. Muestra el
+resultado que devuelve la función en un alert. Después vuelve a pedir los números y
+hacer todo otra vez hasta que el usuario introduzca un 0 como segundo número.*/
+
+        let num1 = 0
+        let num2 = 0
+
+        divide(num1, num2)
+
+        function divide(arg1, arg2) {
+            do {
+
+                num1 = parseInt(window.prompt('Introduce un numero: '))
+                num2 = parseInt(window.prompt('Introduce otro numero: '))
+                if (num2 != 0) {
+                    alert(`El resultado de dividir tus numero es ${num1 / num2}`)
+                } else {
+                }
+            } while (num2 != 0)
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

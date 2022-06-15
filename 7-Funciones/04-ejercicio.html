@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <script>
+        /*4. Escribe una función que devuelva el resultado de sumar los dos parámetros que le
+pasamos. Pide al usuario 2 números. Usa esos 2 números como parámetros de la
+función y después asigna el valor que devuelve la función a una tercera variable.
+Finalmente, muestra el valor de la variable en la consola.*/
+        let num1 = parseInt(window.prompt('Introduce un numero: '))
+        let num2 = parseInt(window.prompt('Introduce otro numero: '))
+        let suma = 0
+        sumaFuncion(num1, num2)
+
+        function sumaFuncion(arg1, arg2) {
+            suma = arg1 + arg2
+            console.log(suma)
+        }
+
+
+
+    </script>
+</body>
+
+</html>

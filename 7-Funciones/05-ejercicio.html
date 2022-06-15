@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        /*5. Escribe una función a la que le damos dos números y que devuelva true si el primer
+número es más grande que el segundo número y false en el caso contrario. Pide dos
+números al usuario, y pasalos a la función. Muestra en consola “El primer número es
+más grande” o “El primer número no es más grande”.*/
+
+        /*let num1 = parseInt(window.prompt('Introduce un numero: '))
+        let num2 = parseInt(window.prompt('Introduce otro numero: '))
+
+        masGrande(num1, num2)
+
+        function masGrande(arg1, arg2) {
+            if (arg1 > arg2) {
+                console.log('El primer número es más grande')
+            } else {
+                console.log('El primer número no es más grande')
+            }
+        }*/    //no habia contado con que podiamos usar la funcion para usar ternario o un if o cualquier cosa
+
+        //clase
+        let num3 = parseInt(window.prompt('Introduce un numero: '))
+        let num4 = parseInt(window.prompt('Introduce otro numero: '))
+
+        masGrande(num3, num4)
+            ? console.log('El primer número es más grande')
+            : console.log('El primer número no es más grande')
+
+        function masGrande(arg1, arg2) {
+            return arg1 > arg2 ? true : false
+        }
+
+    </script>
+</body>
+
+</html>

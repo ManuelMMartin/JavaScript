@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+
+<body>
+    <script>
+        /*10. Crea una aplicación que nos calcule el área de un círculo, cuadrado o triángulo.
+Pediremos de qué figura queremos calcular su área y según lo introducido pedirá los
+valores necesarios para calcular el área. Crea un método por cada figura para
+calcular cada área, este devolverá un número entero(sin decimales). Muestra el
+resultado por pantalla
+a. Circulo: (radio^2)*PI
+b. Triángulo: (base * altura) / 2
+c. Cuadrado: lado * lado*/
+
+        let opcion = window.prompt('Introduce que quieres calcular: \nA) Circulo : \nB) Triángulo: \nC) Cuadrado: ').toUpperCase()
+
+        if (opcion === "A") {
+
+            let radio = (parseInt(window.prompt('Introduce el radio de tu circulo: ')))
+            function circulo(radio)
+
+        } else if (opcion === "B") {
+
+            let base = (parseInt(window.prompt('Introduce la base de tu triángulo: ')))
+            let altura = (parseInt(window.prompt('Introduce la altura de tu triángulo: ')))
+            function triangulo(base, altura)
+
+        } else if (opcion === "C") {
+
+            let lado = (parseInt(window.prompt('Introduce el de tu cuadrado: ')))
+            function cuadrado(lado)
+
+        } else {
+            window.alert('La opcion seleccionada no esta disponible.')
+        }
+
+        function circulo(arg1) {
+            return (window.alert((Math.pow(radio, 2)) * 3.141592))
+        }
+
+        function triangulo(arg1, arg2) {
+            return (window.alert(((base * altura) / 2)))
+        }
+
+        function cuadrado(arg1) {
+            return (window.alert(lado * lado))
+        }
+
+
+    </script>
+</body>
+
+</html>

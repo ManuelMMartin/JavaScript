@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <script>
+        /*7. Diseña una función esPar() que reciba como parámetro un número y devuelva si ese
+número es par o no. Utilízalo en un programa que lea un número por prompt y
+determine si es par o no y muestre un mensaje al respecto en un alert.*/
+
+
+        let num1 = (parseInt(window.prompt('Introduce un numero: ')))
+
+        esPar(num1)
+
+        function esPar(arg1) {
+            if (num1 % 2 === 0) {
+                alert('Tu numero es par')
+            } else {
+                alert('Tu numero es impar')
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

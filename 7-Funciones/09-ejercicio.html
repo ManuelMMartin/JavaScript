@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+
+<body>
+    <script>
+        /*9. Crea una aplicación que nos cuente el número de cifras de un número entero
+positivo (hay que confirmar que no haya introducido un número negativo y
+deberemos quitar los decimales) pedido por teclado. Crea un método que realice
+esta acción: pasando el número por parámetro, devolverá el número de cifras.
+Después mostrar ese número en un alert.*/
+
+        let num1 = (parseInt(window.prompt('Introduce un numero: ')))
+        let cifras = num1.toString()
+        let contador = 0
+        numCifras(num1)
+
+        function numCifras(arg1) {
+            if (num1 > 0) {    
+                for (let i = 0; i < cifras.length; i++) {
+                    contador++  
+                }            
+                alert(`tu numero tiene ${contador} cifras`)
+            } else {
+                alert('Es necesario un numero positivo.')
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
