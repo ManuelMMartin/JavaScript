@@ -19,38 +19,39 @@ a. Circulo: (radio^2)*PI
 b. Triángulo: (base * altura) / 2
 c. Cuadrado: lado * lado*/
 
-        let opcion = window.prompt('Introduce que quieres calcular: \nA) Circulo : \nB) Triángulo: \nC) Cuadrado: ').toUpperCase()
+        do {
+            let opcion = window.prompt('Introduce que quieres calcular: \nA) Circulo : \nB) Triángulo: \nC) Cuadrado: ').toUpperCase()
 
-        if (opcion === "A") {
+            if (opcion === "A" || opcion === "CIRCULO") {
 
-            let radio = (parseInt(window.prompt('Introduce el radio de tu circulo: ')))
-            function circulo(radio)
+                let radio = (parseInt(window.prompt('Introduce el radio de tu circulo: ')))
+                circulo(radio)
+            } else if (opcion === "B" || opcion === "TRIANGULO"){
 
-        } else if (opcion === "B") {
+                let base = (parseInt(window.prompt('Introduce la base de tu triángulo: ')))
+                let altura = (parseInt(window.prompt('Introduce la altura de tu triángulo: ')))
+                triangulo(base, altura)
 
-            let base = (parseInt(window.prompt('Introduce la base de tu triángulo: ')))
-            let altura = (parseInt(window.prompt('Introduce la altura de tu triángulo: ')))
-            function triangulo(base, altura)
+            } else if (opcion === "C" || opcion === "CUADRADO") {
 
-        } else if (opcion === "C") {
+                let lado = (parseInt(window.prompt('Introduce el lado de tu cuadrado: ')))
+                cuadrado(lado)
 
-            let lado = (parseInt(window.prompt('Introduce el de tu cuadrado: ')))
-            function cuadrado(lado)
-
-        } else {
-            window.alert('La opcion seleccionada no esta disponible.')
-        }
+            } else {
+                window.alert('La opcion seleccionada no esta disponible.')
+            }
+        } while ((opcion === "C" || opcion === "CUADRADO") || (opcion === "B" || opcion === "TRIANGULO") || (opcion === "A" || opcion === "CIRCULO"))
 
         function circulo(arg1) {
-            return (window.alert((Math.pow(radio, 2)) * 3.141592))
+            return window.alert((((Math.pow(arg1, 2)) * 3.141592)).toFixed(2))
         }
 
         function triangulo(arg1, arg2) {
-            return (window.alert(((base * altura) / 2)))
+            return window.alert((((arg1 * arg2) / 2)).toFixed(2))
         }
 
         function cuadrado(arg1) {
-            return (window.alert(lado * lado))
+            return window.alert((arg1 * arg1).toFixed(2))
         }
 
 
