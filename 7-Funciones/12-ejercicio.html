@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 12</title>
 </head>
+
 <body>
     <script>
         /*12. Escribe una función a la que le pasamos un año y devuelve true si es bisiesto. En el
@@ -14,8 +16,30 @@ bisiesto” o “El año … no es bisiesto” y sigue pidiendo números y dicie
 bisiesto hasta que introduzca un 0. Un año es bisiesto si es divisible entre 4, pero no
 si es divisible entre 100 pero si es divisible entre 400 sí lo es.*/
 
-   
+        let ano = 1
+
+        do {
+
+            ano = (parseInt(window.prompt('Introduce un año para saber si es bisiesto o no: ')))
+            if (ano>0){
+            bisiesto(ano)
+        } else {}
+
+        }while(ano!==0)
+
+        function bisiesto(arg1) {
+            if (arg1 % 400 === 0) {
+            window.alert(`${arg1} es bisiesto`)
+        } else if (arg1 % 4 === 0 && arg1 % 100 != 0) {
+            window.alert(`${arg1} es bisiesto`)
+        } else {
+            window.alert(`${arg1} no es bisiesto`)
+        }
+        }
         
+
+
     </script>
 </body>
+
 </html>

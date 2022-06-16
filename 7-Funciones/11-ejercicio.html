@@ -16,8 +16,21 @@ a. 0.86 libras es un 1 €
 b. 1.28611 $ es un 1 €
 c. 129.852 yenes es un 1 €*/
 		
-	
+	let euros = (parseFloat(window.prompt('Introduce cuantos euros quieres transformar: ')))
+	let moneda = window.prompt('Introduce a que quieres convertir: \nA) Libras : \nB) Dolares: \nC) Yenes: ').toUpperCase()
 		
+	conversor(euros, moneda)
+
+	function conversor (arg1,arg2) {
+
+		if (arg2 === "C" || arg2 === "YENES") {
+			window.alert(`La equivalencia de ${arg1} € pasada a Yenes es ${(arg1*140.17).toFixed(2)}`)
+		}else if (arg2 === "B" || arg2 === "DOLARES") { 
+			window.alert(`La equivalencia de ${arg1} € pasada a Dolares es ${(arg1*1.04).toFixed(2)}`)
+		}else if (arg2 === "A" || arg2 === "LIBRAS"){
+			window.alert(`La equivalencia de ${arg1} € pasada a Libras es ${(arg1*0.86).toFixed(2)}`)
+		}
+	}
 	</script>
 </body>
 </html>
