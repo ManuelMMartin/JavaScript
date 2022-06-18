@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+
+    <div id="container" class="operacion"></div>
+
+    <script>
+        /*6. Crea un programa que te pregunte qué operación deseas realizar (Suma, Resta,
+Multiplicación, División y Resto). Después te pedirá dos números y aparecerán los
+dos números introducidos y el resultado de la operación de forma visual.*/
+
+
+        let operacion = window.prompt('Introduce que operacion quieres realizar:\nA) Suma\nB) Resta \nC) Multiplicacion \nD) Division \nE) Resto ').toUpperCase()
+
+
+        if (operacion === 'A' || operacion === 'SUMA') {
+            let num1 = parseInt(window.prompt('Introduce un numero: '))
+            let num2 = parseInt(window.prompt('Introduce otro numero: '))
+            suma(num1, num2)
+        } else if (operacion === 'B' || operacion === 'RESTA') {
+            let num1 = parseInt(window.prompt('Introduce un numero: '))
+            let num2 = parseInt(window.prompt('Introduce otro numero: '))
+            resta(num1, num2)
+        } else if (operacion === 'C' || operacion === 'MULTIPLICACION') {
+            let num1 = parseInt(window.prompt('Introduce un numero: '))
+            let num2 = parseInt(window.prompt('Introduce otro numero: '))
+            multiplicacion(num1, num2)
+        } else if (operacion === 'D' || operacion === 'DIVISION') {
+            let num1 = parseInt(window.prompt('Introduce un numero: '))
+            let num2 = parseInt(window.prompt('Introduce otro numero: '))
+            division(num1, num2)
+        } else if (operacion === 'E' || operacion === 'RESTO') {
+            let num1 = parseInt(window.prompt('Introduce un numero: '))
+            let num2 = parseInt(window.prompt('Introduce otro numero: '))
+            resto(num1, num2)
+        } else {
+            noValido()
+        }
+
+
+        function suma(arg1, arg2) {
+            let paragraphSuma = document.createElement('p')
+            paragraphSuma.innerHTML = `<p>Suma: ${arg1}+${arg2} = ${arg1 + arg2}</p>`
+            document.getElementById("container").appendChild(paragraphSuma)
+        }
+        function resta(arg1, arg2) {
+            let paragraphResta = document.createElement('p')
+            paragraphResta.innerHTML = `<p>Resta: ${arg1}-${arg2} = ${arg1 - arg2}</p>`
+            document.getElementById("container").appendChild(paragraphResta)
+        }
+        function multiplicacion(arg1, arg2) {
+            let paragraphMultiplicacion = document.createElement('p')
+            paragraphMultiplicacion.innerHTML = `<p>Multiplicacion: ${arg1}x${arg2} = ${arg1 * arg2}</p>`
+            document.getElementById("container").appendChild(paragraphMultiplicacion)
+        }
+        function division(arg1, arg2) {
+            let paragraphDivision = document.createElement('p')
+            paragraphDivision.innerHTML = `<p>Division: ${arg1}/${arg2} = ${arg1 / arg2}</p>`
+            document.getElementById("container").appendChild(paragraphDivision)
+        }
+        function resto(arg1, arg2) {
+            let paragraphResto = document.createElement('p')
+            paragraphResto.innerHTML = `<p>Resto de ${arg1} entre ${arg2} es ${arg1 % arg2}</p>`
+            document.getElementById("container").appendChild(paragraphResto)
+        }
+        function noValido() {
+            let paragraphnoValido = document.createElement('p')
+            paragraphnoValido.innerHTML = `<p>Esa opcion aun no esta disponible.</p>`
+            document.getElementById("container").appendChild(paragraphnoValido).style.color = "red"
+        }
+
+
+    </script>
+</body>
+
+</html>

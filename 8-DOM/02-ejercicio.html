@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+        /*2. Crea una variable con tu nombre. Después haz un párrafo que diga “Hola, me llamo
+(tu nombre)”.*/
+
+        let name = window.prompt('Introduce tu nombre') //no hace falta pedirlo al usuario
+
+        let paragraph = document.createElement('p')
+        paragraph.innerHTML = `<p> Hola! Me llamo ${name}. </p>`
+        document.body.appendChild(paragraph)
+
+    </script>
+</body>
+
+</html>

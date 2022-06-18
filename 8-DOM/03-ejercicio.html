@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+
+    <div id="container1" class="if"></div>
+    <div id="container2" class="switch"></div>
+    <div id="container3" class="ternario"></div>
+
+    <script>
+        /*3. Crea un programa que te pida un nombre y una edad. Si la edad es menor a 18 años
+mostrar en pantalla “Hola (nombre), eres menor de edad.”. Si es mayor mostrar en
+pantalla “Hola (nombre), eres mayor de edad.”. Hacedlo con if, switch y condicional
+ternario.*/
+
+        let name = window.prompt('Introduce tu nombre: ')
+        let age = parseInt(window.prompt('Introduce tu edad: '))
+
+
+
+
+        if (age < 18) {
+            let paragraphMenor = document.createElement('p')
+            paragraphMenor.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+            document.getElementById("container1").appendChild(paragraphMenor)
+        } else {
+            let paragraphMayor = document.createElement('p')
+            paragraphMayor.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+            document.getElementById("container1").appendChild(paragraphMayor)
+        }
+
+        switch (age) {
+            case age < 18:
+                let paragraphMenor2 = document.createElement('p')
+                paragraphMenor2.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+                document.getElementById("container2").appendChild(paragraphMenor2)
+                break;
+            default:
+                let paragraphMayor2 = document.createElement('p')
+                paragraphMayor2.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+                document.getElementById("container2").appendChild(paragraphMayor2)
+                break;
+        }
+
+        let paragraphMenor3 = document.createElement('p')
+        paragraphMenor3.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+        let paragraphMayor3 = document.createElement('p')
+        paragraphMayor3.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+        age < 18
+            ? document.getElementById("container3").appendChild(paragraphMenor3)
+            : document.getElementById("container3").appendChild(paragraphMayor3)
+
+    </script>
+</body>
+
+</html>

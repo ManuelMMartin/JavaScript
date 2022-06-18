@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 9 - 3 objetos</title>
+</head>
+
+<body>
+
+    <div class="container" id="container"></div>
+
+    <script>
+        /*3. Crea una página con un div vacío. Al entrar en la página se le preguntará al usuario
+que introduzca un número. Inserta ese número en el div vacío. Si el número es
+menor que 100, el número tendrá color verde, si el número es entre 100 y 200 tendrá
+color amarillo. Si el número es mayor que 200, tendrá color rojo.*/
+        let num = parseInt(window.prompt('Introduce un numero: '))
+
+        if (num < 100) {
+            let paragraph = document.createElement('p')
+            paragraph.innerHTML = `<p>${num}</p>`
+            document.getElementById('container').appendChild(paragraph).style.color= 'green'
+        }else if (num>=100 && num<=200) {
+            let paragraph = document.createElement('p')
+            paragraph.innerHTML = `<p>${num}</p>`
+            document.getElementById('container').appendChild(paragraph).style.color= 'yellow'
+        }else {
+            let paragraph = document.createElement('p')
+            paragraph.innerHTML = `<p>${num}</p>`
+            document.getElementById('container').appendChild(paragraph).style.color= 'red'
+        }
+
+    </script>
+</body>
+
+</html>

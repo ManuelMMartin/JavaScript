@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <div id="container1" class="if"></div>
+    <div id="container2" class="switch"></div>
+    <div id="container3" class="ternario"></div>
+
+    <script>
+        /*4. Lo mismo que en el ejercicio 3. Pero si es menor de edad que el mensaje sea rojo y
+si es mayor de edad que el mensaje sea verde.*/
+
+        let name = window.prompt('Introduce tu nombre: ')
+        let age = parseInt(window.prompt('Introduce tu edad: '))
+
+
+
+
+        if (age < 18) {
+            let paragraphMenor = document.createElement('p')
+            paragraphMenor.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+            document.getElementById("container1").appendChild(paragraphMenor).style.color="red"
+        } else if (age >= 18) {
+            let paragraphMayor = document.createElement('p')
+            paragraphMayor.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+            document.getElementById("container1").appendChild(paragraphMayor).style.color="green"
+        }
+
+        switch (age<18) {
+            case true:
+                let paragraphMenor2 = document.createElement('p')
+                paragraphMenor2.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+                document.getElementById("container2").appendChild(paragraphMenor2).style.color="red"
+                break
+            default:
+                let paragraphMayor2 = document.createElement('p')
+                paragraphMayor2.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+                document.getElementById("container2").appendChild(paragraphMayor2).style.color="green"
+                break
+        }
+
+        let paragraphMenor3 = document.createElement('p')
+        paragraphMenor3.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+        let paragraphMayor3 = document.createElement('p')
+        paragraphMayor3.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+        age < 18
+            ? document.getElementById("container3").appendChild(paragraphMenor3).style.color="red"
+            : document.getElementById("container3").appendChild(paragraphMayor3).style.color="green"
+
+
+    </script>
+</body>
+
+</html>

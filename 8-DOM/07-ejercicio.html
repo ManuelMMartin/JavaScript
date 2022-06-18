@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+
+<body>
+    <header>
+        <div id="header__container" class="header__container">
+            <nav class="header__menu">
+                <ul style="display: flex; justify-content: space-between;" class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a id="header__menu-link1" class="header__menu-link1" href="#">Noticia1</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a id="header__menu-link2" class="header__menu-link2" href="#">Noticia2</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a id="header__menu-link3" class="header__menu-link3" href="#">Noticia3</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <article id="" class="">
+        <div id="noticia1" class="noticia1">
+            <h2>Noticia1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem similique, soluta dolore tempora quos quo beatae error explicabo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi rerum voluptas harum labore nostrum odio quae minus, laboriosam commodi quos illum deserunt suscipit voluptates possimus ut architecto mollitia eum ducimus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum laborum dolore vero adipisci placeat laudantium error fuga accusantium quae nisi necessitatibus repellat dolorem, eaque id asperiores voluptate vel animi officiis.</p>
+        </div>
+        <div id="noticia2" class="noticia2">
+            <h2>Noticia2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem similique, soluta dolore tempora quos quo beatae error explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ea voluptate quia tempora, consequuntur beatae nemo? Eligendi sunt quas blanditiis provident veritatis adipisci beatae neque, ratione cum voluptate esse quae.</p>
+        </div>
+        <div id="noticia3" class="noticia3">
+            <h2>Noticia3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatem similique, soluta dolore tempora quos quo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit totam officia sunt natus perferendis optio et eius ipsum! Itaque excepturi nisi, similique laboriosam ullam cumque consequuntur alias placeat maiores rerum! beatae error explicabo?</p>
+        </div>
+    </article>
+
+    <footer>
+        <a id="footer__link" class="footer__link" href="">Volver al inincio</a>
+    </footer>
+
+    <script>
+        /*7. Crea una página web con su Header (con tres enlaces), su Main(con tres divs,
+dentro de cada div podéis meter lo que queráis por ejemplo una noticia) y su Footer
+(con un enlace al inicio de la página). Los enlaces del Header nos deberían llevar
+cada uno a uno de los divs.*/
+
+    document.getElementById("footer__link").innerHTML = "<a href='#header__container'>Volver al inincio</a>"
+    document.getElementById("header__menu-link1").innerHTML = "<a href='#noticia1'>Noticia1</a>"
+    document.getElementById("header__menu-link2").innerHTML = "<a href='#noticia2'>Noticia2</a>"
+    document.getElementById("header__menu-link3").innerHTML = "<a href='#noticia3'>Noticia3</a>"
+
+    </script>
+</body>
+
+</html>

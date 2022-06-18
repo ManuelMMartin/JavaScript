@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio 11 - 7 objetos</title>
+</head>
+
+<body>
+	<style>
+		.h1 {
+			display: block;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			transition: 0.3s;
+			padding: 20px;
+		}
+
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 1200px;
+			width: 100%;
+			margin: auto;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+
+		.img {
+			display: block;
+			margin: auto;
+			width: 250px;
+			height: 250px;
+			object-fit: cover;
+		}
+	</style>
+
+	<script>
+
+		let sistemaSolar = {
+			mercurio: {
+				nombre: "mercurio",
+				color: "gris",
+				temperatura: 350,
+				imagen: "https://www.astromia.com/fotosolar/fotos/planetamercurio.jpg",
+			},
+			venus: {
+				nombre: "venus",
+				color: "blanco",
+				temperatura: 460,
+				imagen:
+					"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus-real_color.jpg/220px-Venus-real_color.jpg",
+			},
+			tierra: {
+				nombre: "tierra",
+				color: "morado",
+				temperatura: 14,
+				imagen:
+					"https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5a0ab2a75bafe87f4d3f9a63/acaba-tiempo_0.jpg",
+			},
+			marte: {
+				nombre: "marte",
+				color: "rojo",
+				temperatura: -46,
+				imagen:
+					"https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/55365b6b34099b0279c8fb2e/slide-marte.jpg",
+			},
+			jupiter: {
+				nombre: "jupiter",
+				color: "marrón",
+				temperatura: -121,
+				imagen:
+					"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/280px-Jupiter_by_Cassini-Huygens.jpg",
+			},
+			saturno: {
+				nombre: "saturno",
+				color: "amarillo",
+				temperatura: -130,
+				imagen:
+					"https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/558d2b15010e26221b57df75/saturno.jpg",
+			},
+			urano: {
+				nombre: "urano",
+				color: "azul",
+				temperatura: -205,
+				imagen: "http://www.manzanares.es/v2/sites/paseo/img/urano/urano1.jpg",
+			},
+			neptuno: {
+				nombre: "neptuno",
+				color: "azul",
+				temperatura: -220,
+				imagen:
+					"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/280px-Neptune_Full.jpg",
+			},
+			pluton: {
+				nombre: "plutón",
+				color: "blanco",
+				temperatura: -229,
+				imagen:
+					"https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg/1200px-Nh-pluto-in-true-color_2x_JPEG.jpg",
+			},
+		};
+
+		/*7. Pedir al usuario tres nombres de planetas del Sistema Solar. Con el objeto Sistema
+Solar, muestra los datos de los tres planetas elegidos. Asegúrate de que los
+nombres existen (y coinciden con las claves del objeto) y de que el usuario no
+introduce valores repetidos.
+a. Los 3 planetas deberán aparecer en el navegador, cada uno dentro de una
+card. Los tres estarán colocados uno junto al otro, alineados horizontalmente.
+b. Arriba del todo de la card aparecerá el nombre, luego la imagen y después
+las características (color y temperatura).*/
+
+		let planeta1 = window.prompt('Introduce un planeta').toLowerCase()
+		let planeta2 = window.prompt('Introduce otro planeta').toLowerCase()
+		let planeta3 = window.prompt('Introduce un tercer planeta').toLowerCase()
+
+		let container = document.createElement('div')
+		container.id = 'container'
+		container.classList.add('container')
+		document.body.appendChild(container)
+
+
+
+		function planetasABuscar(arg1, arg2, arg3) {
+			let planetaABuscar = null
+			for (let entrada in sistemaSolar) {
+				let planeta = sistemaSolar[entrada]
+
+				if (arg1 === planeta.nombre && (arg1 != arg2) && (arg1 != arg3)) {
+					return planeta
+				}
+			}
+		}
+
+		function htmlPlanetas(arg1) {
+			if (arg1 != null) {
+
+				let card = document.createElement('div')
+				card.classList.add('card')
+				container.appendChild(card)
+
+				let h1 = document.createElement('h1')
+				h1.innerHTML = `${arg1.nombre}`
+				card.appendChild(h1)
+
+				let img = document.createElement('img')
+				img.src = arg1.imagen
+				img.classList.add('img')
+				img.alt = "${arg1.nombre} image"
+				card.appendChild(img)
+
+				let color = document.createElement('p')
+				color.innerHTML = `Color: ${arg1.color}`
+				card.appendChild(color)
+
+				let temperatura = document.createElement('p')
+				temperatura.innerHTML = `Temperatura: ${arg1.temperatura}`
+				card.appendChild(temperatura)
+			}
+		}
+
+		let planetaX = planetasABuscar(planeta1, planeta2, planeta3)
+		let planetaY = planetasABuscar(planeta2, planeta1, planeta3)
+		let planetaZ = planetasABuscar(planeta3, planeta2, planeta1)
+
+		if (planetaX != null && planetaY != null && planetaZ != null) {
+			htmlPlanetas(planetaX)
+			htmlPlanetas(planetaY)
+			htmlPlanetas(planetaZ)
+		} else {
+			let h2 = document.createElement('h2')
+			h2.innerHTML = `Ese planeta no esta en nuestra base de datos`
+			document.getElementById('container').appendChild(h2)
+		}
+
+	</script>
+</body>
+
+</html>

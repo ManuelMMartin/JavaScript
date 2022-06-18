@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+
+<body>
+
+
+    <input style="font-size: 40px;" id="alquilar" type="button" value="Alquilar" onclick="alquilar();">
+
+
+
+    <script>
+        /*8. Escribe un programa para una empresa de alquiler de coches. Tendremos que
+preguntar al usuario la edad. Si el usuario es menor de 18, no podrá alquilar un
+vehículo y se lo diremos en pantalla. En caso de ser mayor de edad, le preguntamos
+si tiene carnet de conducir. Si la respuesta es negativa, no podrá alquilar un coche y
+se lo advertiremos por pantalla. Si es mayor de edad le pediremos tanto nombre
+como apellido , ciudad de recogida del vehículo y número de días que quiere alquilar
+el coche (el alquiler del coche por día tiene un coste de 25 euros y en caso que lo
+alquile una semana, el coste será de 150 euros). Imprimir por pantalla los datos del
+cliente que vaya a alquilar el coche y el coste total del alquiler.*/
+
+        function alquilar() {
+            let edad = parseInt(window.prompt("¿Cuantos años tienes?"))
+            if (edad >= 18) {
+                let carnet = window.prompt("¿Tienes carnet de conducir?(S/N): ").toUpperCase()
+                if (carnet === "S") {
+                    let nombre = window.prompt("Introduce tu nombre: ")
+                    let apellidos = window.prompt("Introduce tus apellidos: ")
+                    let ciudad = window.prompt("Introduce la ciudad de recogida: ")
+                    let duracion = parseInt(window.prompt("Introduce cuantos duracion alquilaras el vehiculo: "))
+                    let semanas = parseInt(duracion / 7)
+
+                    let paragraph = document.createElement('p')
+                    paragraph.innerHTML = `<p>
+                    Nombre: ${nombre}
+                    <br>Apellidos: ${apellidos}
+                    <br>Ciudad de  recogida: ${ciudad}
+                    <br>Precio:${semanas > 1 ? semanas * 150 + ((duracion - (semanas * 7)) * 25) : duracion * 25}€ </p>`
+                    document.body.appendChild(paragraph).style.color= 'green'
+
+                    //window.alert(`Nombre: ${nombre}\nApellidos: ${apellidos}\nCiudad de  recogida: ${ciudad}\nPrecio:${semanas > 1 ? semanas * 150 + ((duracion - (semanas * 7)) * 25) : duracion * 25}€`)
+
+                } else {
+
+                    let paragraph = document.createElement('p')
+                    paragraph.innerHTML = `<p> "No tienes reunes los requisitos para alquiler un coche" </p>`
+                    document.body.appendChild(paragraph)
+
+                    //window.alert("No tienes reunes los requisitos para alquiler un coche")
+                }
+
+            } else {
+
+                let paragraph = document.createElement('p')
+                paragraph.innerHTML = `<p> "No tienes edad para conducir" </p>`
+                document.body.appendChild(paragraph).style.color= 'red'
+
+                //window.alert("No tienes edad para conducir")
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
