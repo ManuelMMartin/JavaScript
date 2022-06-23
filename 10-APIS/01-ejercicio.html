@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <div id="container" class="container"></div>
+
+    <style>
+        img {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70%;
+            margin: auto;
+        }
+
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            background-color: darkgray;
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+            display: grid;
+            grid-gap: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 80px;
+        }
+    </style>
+
+
+
+
+    <script>
+        /*1. Proyecto Guttenberg
+            Haz una llamada a la API gutendex.com/books para que devuelta todos los libros.
+            Muestra en cards las portadas y los títulos y autores..*/
+
+        let impresion = ""
+        fetch('http://gutendex.com/books', {
+            credentials: 'omit'
+        })
+            .then(respuesta => respuesta.json())
+            .then(function guardarDatos(book) {
+                let libros = book.results
+                
+                for (let i = 0; i < libros.length; i++) {
+                    impresion += `
+                            
+                            <div id="card" class="card">
+                                <img src="${libros[i].formats["image/jpeg"]}" alt="${libros[i].title} image">
+                                <h4><b>${libros[i].title}</b></h4>
+                                <p>${libros[i].authors[0].name}</p>
+                            </div>`
+                    container.innerHTML = impresion
+                }
+
+
+            })
+
+    </script>
+</body>
+
+</html>
