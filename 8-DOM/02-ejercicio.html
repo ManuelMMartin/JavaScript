@@ -16,7 +16,13 @@
         let name = window.prompt('Introduce tu nombre') //no hace falta pedirlo al usuario
 
         let paragraph = document.createElement('p')
-        paragraph.innerHTML = `<p> Hola! Me llamo ${name}. </p>`
+        paragraph.innerHTML = `<p> Hola! Me llamo ${name}.</p>`//estoy creando un P y dentro le meto otro P con texto...
+        document.body.appendChild(paragraph)
+
+        //en clase
+
+        let paragraph = document.createElement('p')
+        paragraph.innerText = `Hola! Me llamo ${name}.`
         document.body.appendChild(paragraph)
 
     </script>

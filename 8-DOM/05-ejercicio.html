@@ -26,29 +26,67 @@ un color y un color de fondo distintos.*/
         let num2 = parseInt(window.prompt('Introduce otro numero: '))
 
         let paragraphSuma = document.createElement('p')
-        paragraphSuma.innerHTML = `<p>Suma: ${num1}+${num2} = ${num1+num2}</p>`
+        paragraphSuma.innerHTML = `<p>Suma: ${num1}+${num2} = ${num1 + num2}</p>`
         document.getElementById("container1").appendChild(paragraphSuma).style.color = "blue"
         document.getElementById("container1").style.backgroundColor = "#aab63e"
 
         let paragraphResta = document.createElement('p')
-        paragraphResta.innerHTML = `<p>Resta: ${num1}-${num2} = ${num1-num2}</p>`
+        paragraphResta.innerHTML = `<p>Resta: ${num1}-${num2} = ${num1 - num2}</p>`
         document.getElementById("container2").appendChild(paragraphResta).style.color = "red"
         document.getElementById("container2").style.backgroundColor = "#035e03"
 
         let paragraphMultiplicacion = document.createElement('p')
-        paragraphMultiplicacion.innerHTML = `<p>Multiplicacion: ${num1}x${num2} = ${num1*num2}</p>`
+        paragraphMultiplicacion.innerHTML = `<p>Multiplicacion: ${num1}x${num2} = ${num1 * num2}</p>`
         document.getElementById("container3").appendChild(paragraphMultiplicacion).style.color = "yellow"
         document.getElementById("container3").style.backgroundColor = "#7a7780"
 
         let paragraphDivision = document.createElement('p')
-        paragraphDivision.innerHTML = `<p>Division: ${num1}/${num2} = ${num1/num2}</p>`
+        paragraphDivision.innerHTML = `<p>Division: ${num1}/${num2} = ${num1 / num2}</p>`
         document.getElementById("container4").appendChild(paragraphDivision).style.color = "tomato"
         document.getElementById("container4").style.backgroundColor = "#99d227"
 
         let paragraphResto = document.createElement('p')
-        paragraphResto.innerHTML = `<p>Resto de ${num1} entre ${num2} es ${num1%num2}</p>`
+        paragraphResto.innerHTML = `<p>Resto de ${num1} entre ${num2} es ${num1 % num2}</p>`
         document.getElementById("container5").appendChild(paragraphResto).style.color = "white"
         document.getElementById("container5").style.backgroundColor = "#000000"
+
+
+        //en clase
+        let num3 = parseInt(window.prompt('Introduce un numero: '))
+        let num4 = parseInt(window.prompt('Introduce otro numero: '))
+
+        let p1 = document.createElement("p")
+        let p2 = document.createElement("p")
+        let p3 = document.createElement("p")
+        let p4 = document.createElement("p")
+        let p5 = document.createElement("p")
+
+
+        p1.innerText = `Suma: ${num1}+${num2} = ${num1 + num2}`
+        p1.style.backgroundColor = "red"
+        p1.style.color = 'white'
+
+        p2.innerText = `Resta: ${num1}-${num2} = ${num1 - num2}`
+        p2.style.backgroundColor = "brown"
+        p2.style.color = 'purple'
+
+        p3.innerText = `Multiplicacion: ${num1}x${num2} = ${num1 * num2}`
+        p3.style.backgroundColor = "violet"
+        p3.style.color = 'yellow'
+
+        p4.innerText = `Division: ${num1}/${num2} = ${num1 / num2}`
+        p4.style.backgroundColor = "tomato"
+        p4.style.color = 'orange'
+        
+        p5.innerText = `Resto de ${num1} entre ${num2} es ${num1 % num2}`
+        p5.style.backgroundColor = "black"
+        p5.style.color = 'blue'
+
+        document.body.appendChild(p1)
+        document.body.appendChild(p2)
+        document.body.appendChild(p3)
+        document.body.appendChild(p4)
+        document.body.appendChild(p5)
 
     </script>
 </body>

@@ -78,6 +78,39 @@ dos números introducidos y el resultado de la operación de forma visual.*/
         }
 
 
+        //en clase
+
+        let operacion2 = window.prompt('Introduce que operacion quieres realizar:\nA) Suma\nB) Resta \nC) Multiplicacion \nD) Division \nE) Resto ').toUpperCase()
+
+        let num3 = parseInt(window.prompt('Introduce un numero: '))
+        let num4 = parseInt(window.prompt('Introduce otro numero: '))
+
+        let respuesta = document.createElement('p')
+
+
+        switch (operacion2) {
+            case 1:
+                respuesta.innetText = `Suma: ${arg1}+${arg2} = ${arg1 + arg2}`
+                break;
+            case 2:
+            respuesta.innetText =`Resta: ${arg1}-${arg2} = ${arg1 - arg2}`
+                break;
+            case 3:
+            respuesta.innetText =`Multiplicacion: ${arg1}x${arg2} = ${arg1 * arg2}`
+                break;
+            case 4:
+            respuesta.innetText =`Division: ${arg1}/${arg2} = ${arg1 / arg2}`
+                break;
+            case 5:
+            respuesta.innetText =`Resto de ${arg1} entre ${arg2} es ${arg1 % arg2}`
+                break;
+
+            default:
+            respuesta.innetText =`Esa opcion aun no esta disponible.`
+                break;
+        }
+        document.body.appendChild(respuesta)
+
     </script>
 </body>
 

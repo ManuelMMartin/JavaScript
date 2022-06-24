@@ -19,20 +19,25 @@ Después mostrar ese número en un alert.*/
         let num1 = (parseInt(window.prompt('Introduce un numero: ')))
         let cifras = num1.toString()
         let contador = 0
-        numCifras(num1)
+        numCifras(num1,cifras)
 
-        function numCifras(arg1) {
+        function numCifras(arg1,arg2) {
             if (num1 > 0) {    
-                for (let i = 0; i < cifras.length; i++) {
+                for (let i = 0; i < arg2.length; i++) {
                     contador++  
                 }            
                 alert(`tu numero tiene ${contador} cifras`)
             } else {
                 alert('Es necesario un numero positivo.')
             }
-
-
         }
+
+        //clase
+
+        let num2 =Math.abs(parseInt(window.prompt('Introduce un numero')))
+
+        window.alert(contarCifras(num2))
+        
 
     </script>
 </body>

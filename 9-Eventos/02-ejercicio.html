@@ -1227,7 +1227,7 @@
 
     //sacar card de indice que te diga el usuario
     let eleccion = parseInt(window.prompt("Introduce el indice de la persona que buscas"))
-    if (eleccion > 0 && eleccion <= personasFinal.length) {
+    if (eleccion >= 0 && eleccion < personasFinal.length) {
       let div2 = document.createElement("div")
       div2.classList.add("container")
       div2.innerHTML = `
@@ -1250,7 +1250,7 @@
     let name = window.prompt("Introduce el nombre de la persona que buscas")
     for (let i = 0; i < personasFinal.length; i++) {
       if (personasFinal[i].nombre.includes(name) === true) {
-
+        
         let div3 = document.createElement("div")
         div3.classList.add("container")
         div3.innerHTML = `
@@ -1266,6 +1266,25 @@
       
     }
 
+//en clase
+
+let name2 = window.prompt("Introduce el nombre de la persona que buscas")
+let impresion =""
+    for (let i = 0; i < personasFinal.length; i++) {
+      if (personasFinal[i].nombre.includes(name2) === true) {
+        impresion+= `
+        <p class="card">
+        <img class="img" src="${personasFinal[i].imagen}"" alt="${personasFinal[i].nombre} imagen"><br>
+        Nombre: ${personasFinal[i].nombre}<br>
+        Edad: ${personasFinal[i].edad}<br>
+        Telefono: ${personasFinal[i].telefono}<br>
+        Usuario: ${personasFinal[i].usuario}<br>
+        Pais: ${personasFinal[i].pais}<br>`
+        
+      }
+      
+    }
+    document.body.appendChild(div3)
 
   </script>
 </body>

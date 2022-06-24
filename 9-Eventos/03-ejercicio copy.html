@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado</title>
+</head>
+
+<body>
+    <style>
+        .header__container {
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .header__logo {
+            width: 87px;
+        }
+
+        h1 {
+            font-size: 70px;
+        }
+
+        img {
+            border-style: none;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .grid--2-cols {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 80px;
+        }
+
+        .menu {
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+
+        .cesta {
+            padding: 20px;
+            color: white;
+            background-color: dimgrey;
+        }
+    </style>
+
+
+    <header>
+        <div class="header__container">
+
+            <img class="header__logo"
+                src="https://previews.123rf.com/images/ylivdesign/ylivdesign1710/ylivdesign171013740/88593159-logotipo-de-tienda-de-comercio-electr%C3%B3nico-ilustraci%C3%B3n-simple-del-logotipo-de-vector-de-tienda-de-co.jpg"
+                alt="Logo">
+            <h1>Alimentación Alfonso</h1>
+        </div>
+    </header>
+
+    <section class="grid--2-cols">
+        <div id="menu" class="menu">
+            <nav>
+                <h2>MENU</h2>
+            </nav>
+            <h3><button onclick="modificar('-', 'manzana') id="buttonMenosManzana" class="buttonMenosManzana">-</button> Manzana<button onclick="modificar('+', 'manzana')
+                    id="buttonMasManzana" class="buttonMasManzana">+</button> ........................0,50€</h3>
+
+            <h3><button onclick="modificar('-', 'carne')" id="buttonMenosCarne" class="buttonMenosCarne">-</button>
+                Carne <button onclick="modificar('+', 'carne') id="buttonMasCarne" class="buttonMasCarne">+</button>..............................3,00€
+            </h3>
+
+            <h3><button id="buttonMenosLeche" class="buttonMenosLeche">-</button> Leche <button id="buttonMasLeche"
+                    class="buttonMasLeche">+</button>..............................1,00€</h3>
+
+            <h3><button id="buttonMenosPescado" class="buttonMenosPescado">-</button> Pescado <button
+                    id="buttonMasPescado" class=" buttonMasPescado">+</button>...........................4,50€</h3>
+        </div>
+        <div id="cesta" class="cesta">
+            <h2>CESTA</h2>
+            <p id="Manzana" class="Manzana">Manzanas</p>
+            <p id="Carne" class="Carne">Carne</p>
+            <p id="Leche" class="Leche">Leche</p>
+            <p id="Pescado" class="Pescado">Pescado</p>
+            <h3 id="Total" class="Total">Total</h3>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <h4>Gracias por confiar en Alimentación Alfonso</h4>
+    </footer>
+
+
+
+    <script>
+        /*3 Supermercado
+        Vamos a hacer un e-comerce sencillo para el supermercado del barrio “Alimentación
+        Alfonso”:
+        1. Hacemos una estructura de web clásica: header, main y un footer.
+        2. Creamos cuatro divs que tengan un h2 que diga: “manzana”, “carne”, “leche” y
+        “pescado” junto con su precio
+        3. Le añadimos un botón a cada uno para añadir una unidad a la cesta y otro para
+        restarla.
+        4. Cuando hagamos click en estos botones, se mostrará en la cesta un texto con la
+        descripción y la cantidad ( Manzanas: 2, Leche: 4 ) para los productos de los que
+        tengamos más de 0 en nuestra cesta.
+        5. Además, aparecera el icono correspondiente a cada producto tantas veces como
+        unidades tengamos en la cesta.
+
+        Tip: “Ve por partes y resuelve pequeños problemas”:
+        1. En primer lugar crear una página con un sólo producto y un sólo botón. Al
+        hacer click en el botón se le sumará uno al total y en el mensaje de la cesta
+        aparecerá el número total que tengamos.
+        2. Una vez tengamos la parte anterior funcionando, hacer que en vez de
+        mostrar el número solamente, la cesta muestre “Pescado: 7”, combinando el
+        número con el nombre del producto.
+        3. Una vez funcione lo anterior, añadiremos un botón para restar unidades.
+        4. Una vez tengamos la parte anterior funcionando, añadiremos que se muestre
+        el icono del producto tantas veces como unidades tengamos en la cesta.
+        5. Cuando todo funcione correctamente para un producto añadiremos otro. El
+        código será parecido pero tendrá que tener en cuenta que hay más de un
+        producto.
+        6. Finalmente, una vez tengamos dos productos funcionando correctamente,
+        añadiremos los otros dos ya que será simplemente aumentar la
+        funcionalidad.*/
+
+
+        let manzanas = 0
+        let carne = 0
+        let leche = 0
+        let pescado = 0
+
+        function modificar(direccion, producto) {
+            if (producto === manzana) {
+                direccion === "+"
+                    ? manzana++
+                    : manzana--
+            } else if (producto === carne) {
+                direccion === "+"
+                    ? carne++
+                    : carne--
+            } if (producto === pescado) {
+                direccion === "+"
+                    ? pescado++
+                    : pescado--
+            } else {
+                direccion === "+"
+                    ? leche++
+                    : leche--
+            }
+        }
+
+    </script>
+</body>
+
+</html>

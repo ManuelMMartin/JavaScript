@@ -26,23 +26,23 @@ si es mayor de edad que el mensaje sea verde.*/
         if (age < 18) {
             let paragraphMenor = document.createElement('p')
             paragraphMenor.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
-            document.getElementById("container1").appendChild(paragraphMenor).style.color="red"
+            document.getElementById("container1").appendChild(paragraphMenor).style.color = "red"
         } else if (age >= 18) {
             let paragraphMayor = document.createElement('p')
             paragraphMayor.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
-            document.getElementById("container1").appendChild(paragraphMayor).style.color="green"
+            document.getElementById("container1").appendChild(paragraphMayor).style.color = "green"
         }
 
-        switch (age<18) {
+        switch (age < 18) {
             case true:
                 let paragraphMenor2 = document.createElement('p')
                 paragraphMenor2.innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
-                document.getElementById("container2").appendChild(paragraphMenor2).style.color="red"
+                document.getElementById("container2").appendChild(paragraphMenor2).style.color = "red"
                 break
             default:
                 let paragraphMayor2 = document.createElement('p')
                 paragraphMayor2.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
-                document.getElementById("container2").appendChild(paragraphMayor2).style.color="green"
+                document.getElementById("container2").appendChild(paragraphMayor2).style.color = "green"
                 break
         }
 
@@ -51,8 +51,20 @@ si es mayor de edad que el mensaje sea verde.*/
         let paragraphMayor3 = document.createElement('p')
         paragraphMayor3.innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
         age < 18
-            ? document.getElementById("container3").appendChild(paragraphMenor3).style.color="red"
-            : document.getElementById("container3").appendChild(paragraphMayor3).style.color="green"
+            ? document.getElementById("container3").appendChild(paragraphMenor3).style.color = "red"
+            : document.getElementById("container3").appendChild(paragraphMayor3).style.color = "green"
+
+        //en clase
+
+        let name1 = window.prompt('Introduce tu nombre: ')
+        let age1 = parseInt(window.prompt('Introduce tu edad: '))
+        let contenido = document.createElement('p')
+
+        age < 18
+            ? (contenido.innerText = `Hola ${name}! eres menor de edad.`, contenido.style.color = 'green')
+            : (contenido.innerText = `Hola ${name}! eres mayor de edad.`, contenido.style.color = 'green')
+
+        document.body.appendChild(contenido)
 
 
     </script>

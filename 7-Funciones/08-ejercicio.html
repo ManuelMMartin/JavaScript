@@ -18,14 +18,14 @@ resultado en un alert.*/
 
         let num1 = (parseInt(window.prompt('Introduce un numero: ')))
 
-        factorial(num1)
+        window.alert(factorial(num1))
 
         function factorial(arg1) {
             let j = 1
-            for (i = 1; i <= num1; i++) {
+            for (i = 1; i <= arg1; i++) {
                 j *= i
             }
-            alert(j)
+            return j
         }
 
     </script>

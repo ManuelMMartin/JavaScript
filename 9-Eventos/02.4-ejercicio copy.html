@@ -11,8 +11,8 @@
 <body>
 
 
-  <input type="text" id="texto" placeholder="Introduce un nombre">
-  <button id="button" type="button">Enviar</button>
+  <input type="text" onchange="actualizar(e)" id="texto" placeholder="Introduce un nombre">
+  <button id="button" type="button" onclick="buscar()">Enviar</button>
   <div id="base" class="grid"></div>
 
 
@@ -1207,8 +1207,8 @@
         pais: personas[i].location.country
       })
     }
-    let input = ''
-    texto.addEventListener('change', () => {
+    /*let input = ''
+    texto.addEventListener('change', (event) => {
       input = event.target.value
     })
 
@@ -1218,8 +1218,9 @@
 
     function personaSi(arg1) {
       for (let i = 0; i < personasFinal.length; i++) {
-        personasFinal[i].nombre.includes(arg1)
-        return personasFinal[i]
+        if (personasFinal[i].nombre.includes(arg1) === true) {
+          return personasFinal[i]
+        }
       }
     }
 
@@ -1235,10 +1236,28 @@ Usuario: ${arg1.usuario}<br>
 Pais: ${arg1.pais}<br>`
       document.body.appendChild(base)
     }
+*/
+    function buscar() {
+      for (let i = 0; i < personasFinal.length; i++) {
+        if (personasFinal[i].nombre.includes(input)) {
+          impresion += `
+        <p class="card">
+        <img class="img" src="${personasFinal[i].imagen}"" alt="${personasFinal[i].nombre} imagen"><br>
+        Nombre: ${personasFinal[i].nombre}<br>
+        Edad: ${personasFinal[i].edad}<br>
+        Telefono: ${personasFinal[i].telefono}<br>
+        Usuario: ${personasFinal[i].usuario}<br>
+        Pais: ${personasFinal[i].pais}<br>`
+        }
+      }
 
+    }
 
+    function actualizar(e) {
+      input = e.target.value
+    }
 
-
+    base.innerHTML = impresion
 
 
   </script>

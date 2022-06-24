@@ -17,14 +17,10 @@ determine si es par o no y muestre un mensaje al respecto en un alert.*/
 
         let num1 = (parseInt(window.prompt('Introduce un numero: ')))
 
-        esPar(num1)
+        window.alert(esPar(num1) ?'Tu numero es par':'Tu numero es impar')
 
         function esPar(arg1) {
-            if (num1 % 2 === 0) {
-                alert('Tu numero es par')
-            } else {
-                alert('Tu numero es impar')
-            }
+            return arg1 % 2 === 0
         }
 
 

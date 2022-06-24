@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+</head>
+
+<body>
+    <script>
+        /*16. Escribe un programa que te indique la fecha del día siguiente a la que el usuario haya
+introducido por teclado. Habrá que verificar que la fecha introducida es correcta.*/
+        let fecha = new Date(window.prompt('Introduce una fecha (MM/DD/AAAA): '))
+        let dia = fecha.getDate() + 1 //suma un dia a la fecha introducida
+        let mes = fecha.getMonth() + 1 //
+        let ano = fecha.getFullYear()
+
+        
+
+        if (dia > 0 && dia <= 31) {
+            if (mes > 0 && mes <= 12) {
+                if ((ano.toString().length) == 4) {
+                    console.log('Fecha correcta.')
+                    console.log(`El dia siguiente a la fecha introducida es ${dia}/${mes}/${ano}`)
+                }
+                    
+                }
+            }else {
+            console.log('El formato introducido no es valido.')
+        }
+        
+
+
+
+    </script>
+</body>
+
+</html>

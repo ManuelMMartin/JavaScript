@@ -9,7 +9,13 @@
 </head>
 
 <body>
-    
+
+    <label for="planeta">Elige un planeta:</label>
+
+    <select name="planetas" id="planet">
+
+    </select>
+
     <script>
         /*4. Personajes de Rick Y Morty por planeta
             a.  Utilizar la base de datos de Rick y Morty (disponible en
@@ -26,7 +32,53 @@
                 utilizar el botón (buscar en internet documentación sobre eventos que se
                 ejecutan cuando se cambia la selección)*/
 
-        
+
+
+        fetch(`https://rickandmortyapi.com/api/location`).then((respuesta) => respuesta.json()).then((listaPlanetas) => {
+
+            let option = document.createElement("option")
+
+            for (let i = 0; i < listaPlanetas.results.length; i++) {
+                option += `
+                    <option value="${listaPlanetas.results[i].name}">${listaPlanetas.results[i].name}</option>
+                    `
+                console.log(listaPlanetas.results[i])
+            }
+
+            planet.addEventListener("change", function () {
+                let input = document.getElementById("planet").value
+                //alert(input)
+                personajePlaneta(input)
+            })
+
+            planet.innerHTML = option
+        })
+
+        function personajePlaneta (input){
+            fetch(`https://rickandmortyapi.com/api/character`).then((results)=> results.json()).then((listaPersonas)=>{
+                for (let i = 0; i < listaPersonas.results.length; i++) {
+                    if (listaPersonas.results[i].location["name"]===input){
+                        let div = document.createElement("div")
+                        div.innerHTML +=`
+                        <p>${listaPersonas.results[i].name}`
+
+                            document.body.appendChild(div)
+                    }
+                    
+                }
+            })
+
+
+        }
+
+        function pedir(event) {
+            fetch(`https://rickandmortyapi.com/api/location/${event.target.value}`)
+            .then(respuesta=>respuesta.json())
+            .then(datos=> {
+                let arrayRespuesta =datos.residents
+            })
+        }
+    
 
 
     </script>

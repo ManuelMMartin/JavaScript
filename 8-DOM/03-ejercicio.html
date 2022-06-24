@@ -57,6 +57,43 @@ ternario.*/
             ? document.getElementById("container3").appendChild(paragraphMenor3)
             : document.getElementById("container3").appendChild(paragraphMayor3)
 
+        //en clase
+
+        if (age < 18) {
+            document.getElementById("container1").innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+        } else {
+
+            document.getElementById("container1").innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+        }
+
+        switch (age) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+                document.getElementById("container2").innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+                break;
+            default:
+                document.getElementById("container2").innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+        }
+
+        age < 18
+            ? document.getElementById("container3").innerHTML = `<p> Hola ${name}! eres menor de edad. </p>`
+            : document.getElementById("container3").innerHTML = `<p> Hola ${name}! eres mayor de edad. </p>`
+
     </script>
 </body>
 

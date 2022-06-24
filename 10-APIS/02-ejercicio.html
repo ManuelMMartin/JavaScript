@@ -11,7 +11,6 @@
 <body>
 
 
-    <button id="button" type="button" onclick="">Aleatorio</button>
     <div id="base" class="grid"></div>
 
 
@@ -35,28 +34,32 @@
                     <div id="card" class="card">
                                 <img src="${personajes.data[i].imageUrl}" alt="${personajes.data[i].name} image">
                                 <h4><b>Nombre: ${personajes.data[i].name}</b></h4>
+                                <p><b>ID: ${personajes.data[i]._id}</b></p>
                                 <p>Filmografia: ${personajes.data[i].films}</p>
                             </div>`
-                            base.innerHTML = impresion
+                            
                         } else {
                             impresion += `
                     <div id="card" class="card">
                                 <img src="${personajes.data[i].imageUrl}" alt="${personajes.data[i].name} image">
                                 <h4><b>Nombre: ${personajes.data[i].name}</b></h4>
+                                <p><b>ID: ${personajes.data[i]._id}</b></p>
                                 <p></p>
                             </div>`
-                            base.innerHTML = impresion
+                            
                         }
 
                     }
 
 
                 }
+                base.innerHTML = impresion
 
             })
+            base.innerHTML = impresion
 
         function aleatorio() {
-            return (parseInt(Math.random() * 500 + 1))
+            return (parseInt(Math.random() * 50 + 1))
         }
 
     </script>

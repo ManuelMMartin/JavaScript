@@ -15,7 +15,14 @@ números y lo muestre por consola. No es necesario pedir los números al usuario
       for (i=0;i<=10;i++) {
         suma+=i
         }console.log(suma/array.length)
+        //clase
 
+        for (let i = 0; i < 10; i++) {
+            array.push(Math.floor(Math.random()*100)) //math.floor redondea el numero.
+        }
+        for (i=0;i<=10;i++) {
+        suma+=array[i]
+        }console.log(suma/array.length)
     </script>
 </body>
 </html>

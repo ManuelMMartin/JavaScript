@@ -21,23 +21,32 @@ si es divisible entre 100 pero si es divisible entre 400 sí lo es.*/
         do {
 
             ano = (parseInt(window.prompt('Introduce un año para saber si es bisiesto o no: ')))
-            if (ano>0){
-            bisiesto(ano)
-        } else {}
+            if (ano > 0) {
+                bisiesto(ano)
+            } else { }
 
-        }while(ano!==0)
+        } while (ano !== 0)
 
         function bisiesto(arg1) {
-            if (arg1 % 400 === 0) {
-            window.alert(`${arg1} es bisiesto`)
-        } else if (arg1 % 4 === 0 && arg1 % 100 != 0) {
-            window.alert(`${arg1} es bisiesto`)
-        } else {
-            window.alert(`${arg1} no es bisiesto`)
+            if (arg1 % 4 === 0 && arg1 % 100 != 0 || arg1 % 400 === 0) {
+                window.alert(`${arg1} es bisiesto`)
+            } else {
+                window.alert(`${arg1} no es bisiesto`)
+            }
         }
-        }
-        
 
+        //clase 
+
+        let ano1 = 1
+
+        do {
+            ano1 = (parseInt(window.prompt('Introduce un año para saber si es bisiesto o no: ')))
+            window.alert(bisiesto(ano1)) ? `${arg1} es bisiesto` : `${arg1} no es bisiesto`
+        } while (ano !== 0)
+
+        function bisiesto(arg1) {
+            return (arg1 % 4 === 0 && arg1 % 100 != 0) || arg1 % 400 === 0
+        }
 
     </script>
 </body>

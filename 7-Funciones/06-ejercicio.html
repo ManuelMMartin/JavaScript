@@ -18,20 +18,18 @@ hacer todo otra vez hasta que el usuario introduzca un 0 como segundo número.*/
         let num1 = 0
         let num2 = 0
 
-        divide(num1, num2)
+        do {
+            num1 = parseInt(window.prompt('Introduce un numero: '))
+            num2 = parseInt(window.prompt('Introduce otro numero: '))
+            if (num2 != 0) {
+                divide(num1, num2)
+            } else {
+            }
+        } while (num2 != 0)
+       
 
         function divide(arg1, arg2) {
-            do {
-
-                num1 = parseInt(window.prompt('Introduce un numero: '))
-                num2 = parseInt(window.prompt('Introduce otro numero: '))
-                if (num2 != 0) {
-                    alert(`El resultado de dividir tus numero es ${num1 / num2}`)
-                } else {
-                }
-            } while (num2 != 0)
-
-
+            alert(`El resultado de dividir tus numero es ${num1 / num2}`)
         }
 
 

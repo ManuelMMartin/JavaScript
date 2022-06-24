@@ -10,17 +10,34 @@
 
 <body>
 
-    <div id="container1" class="if"></div>
-    <div id="container2" class="switch"></div>
-    <div id="container3" class="ternario"></div>
+    <input type="text" id="texto" placeholder="Introduce un numero">
+    <button id="button" onclick="pedir()" type="button">Enviar</button>
+
 
     <script>
+
+
+        function pedir(){
+            let input = document.getElementById('texto').value
+            console.log(input)
+        }
+
+        
+
         /*3. xkxd
             Crea una página con un input de texto que le pida al usuario un número Al apretar
             un botón, se le hace una petición a la API de xkcd, y muestra al usuario el cómic de
             ese número, la fecha de publicación y el titulo.*/
 
-       
+        fetch(`https://xkcd.com/${input}/info.0.json`).then((respueta) => respueta.json()).then((comic) => {
+            console.log(comic)
+        })
+
+
+
+
+
+
 
     </script>
 </body>
