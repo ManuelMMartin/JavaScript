@@ -2,67 +2,68 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 2</title>
 </head>
 
 <body>
 
 
-    <div id="base" class="grid"></div>
+  <div id="base" class="grid"></div>
 
 
-    <script>
-        /*2. Disney
-            Usa la api https://api.disneyapi.dev/characters/xxx parapedir un personaje aleatorio
-            pasándole un número entre 001 y 500 en vez del xxx.. Crea un div en el que
-            aparezca la foto, el nombre y el id. Si estuviera disponible, enumerar las películas
-            donde ha salido.*/
-        let impresion = ""
-        fetch('https://api.disneyapi.dev/characters/', {
-        })
-            .then(respuesta => respuesta.json())
-            .then(function guardarDatos(personajes) {
-                console.log(personajes.data)
+  <script>
+    /*2. Disney
+        Usa la api https://api.disneyapi.dev/characters/xxx parapedir un personaje aleatorio
+        pasándole un número entre 001 y 500 en vez del xxx.. Crea un div en el que
+        aparezca la foto, el nombre y el id. Si estuviera disponible, enumerar las películas
+        donde ha salido.*/
 
-                for (let i = 0; i < personajes.data.length; i++) {
-                    if (personajes.data[i]._id === aleatorio()) {
-                        if (personajes.data[i].films.length > 0) {
-                            impresion += `
+    let impresion = ""
+    fetch('https://api.disneyapi.dev/characters/', {
+    })
+      .then(respuesta => respuesta.json())
+      .then(function guardarDatos(personajes) {
+        console.log(personajes.data)
+
+        for (let i = 0; i < personajes.data.length; i++) {
+          if (personajes.data[i]._id === aleatorio()) {
+            if (personajes.data[i].films.length > 0) {
+              impresion += `
                     <div id="card" class="card">
-                                <img src="${personajes.data[i].imageUrl}" alt="${personajes.data[i].name} image">
-                                <h4><b>Nombre: ${personajes.data[i].name}</b></h4>
-                                <p><b>ID: ${personajes.data[i]._id}</b></p>
-                                <p>Filmografia: ${personajes.data[i].films}</p>
-                            </div>`
-                            
-                        } else {
-                            impresion += `
+                      <img src="${personajes.data[i].imageUrl}" alt="${personajes.data[i].name} image">
+                      <h4><b>Nombre: ${personajes.data[i].name}</b></h4>
+                      <p><b>ID: ${personajes.data[i]._id}</b></p>
+                      <p>Filmografia: ${personajes.data[i].films}</p>
+                    </div>`
+
+            } else {
+              impresion += `
                     <div id="card" class="card">
                                 <img src="${personajes.data[i].imageUrl}" alt="${personajes.data[i].name} image">
                                 <h4><b>Nombre: ${personajes.data[i].name}</b></h4>
                                 <p><b>ID: ${personajes.data[i]._id}</b></p>
                                 <p></p>
                             </div>`
-                            
-                        }
 
-                    }
+            }
+
+          }
 
 
-                }
-                base.innerHTML = impresion
-
-            })
-            base.innerHTML = impresion
-
-        function aleatorio() {
-            return (parseInt(Math.random() * 50 + 1))
         }
+        base.innerHTML = impresion
 
-    </script>
+      })
+    base.innerHTML = impresion
+
+    function aleatorio() {
+      return (parseInt(Math.random() * 50 + 1))
+    }
+
+  </script>
 </body>
 
 </html>

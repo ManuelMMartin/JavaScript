@@ -2,73 +2,77 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 4</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 4</title>
 </head>
 
 <body>
 
-    <label for="planeta">Elige un planeta:</label>
+  <label for="planeta">Elige un planeta:</label>
 
-    <select name="planetas" id="selector" onchange="avisar(event)">
+  <select name="planetas" id="selector" onchange="(pedir(event))"></select>
+  <div id="respuesta"></div>
+  <script>
+    /*4. Personajes de Rick Y Morty por planeta
+        a.  Utilizar la base de datos de Rick y Morty (disponible en
+            https://rickandmortyapi.com/documentation), para obtener la lista de planetas
+            y mostrarlos en un dropdown (etiqueta select).
 
-    </select>
+        b.  Cuando el usuario elige una opción, se muestra en un alert la opción
+            elegida..
 
-    <script>
-        /*4. Personajes de Rick Y Morty por planeta
-            a.  Utilizar la base de datos de Rick y Morty (disponible en
-                https://rickandmortyapi.com/documentation), para obtener la lista de planetas
-                y mostrarlos en un dropdown (etiqueta select).
+        c.  En vez de mostrar el alert, hacer una petición fetch para ver los personajes
+            que están en ese planeta y mostrarlos en un div debajo del dropdown.
 
-            b.  Cuando el usuario elige una opción, se muestra en un alert la opción
-                elegida..
+        d.  Hacer la petición fetch en cuanto se selecciona una opción diferente, sin
+            utilizar el botón (buscar en internet documentación sobre eventos que se
+            ejecutan cuando se cambia la selección)*/
 
-            c.  En vez de mostrar el alert, hacer una petición fetch para ver los personajes
-                que están en ese planeta y mostrarlos en un div debajo del dropdown.
-
-            d.  Hacer la petición fetch en cuanto se selecciona una opción diferente, sin
-                utilizar el botón (buscar en internet documentación sobre eventos que se
-                ejecutan cuando se cambia la selección)*/
-        let promesa3 = []
-        let promesa2 = []
-        function avisar(event) {
-            let valor = event.target.value
+    fetch(`https://rickandmortyapi.com/api/location`)
+      .then((respuesta) => respuesta.json())
+      .then((datos) => {
+        let opciones = `<option selected="selected">Selecciona una opcion</option>`
+        for (let i = 0; i < datos.results.length; i++) {
+          if (datos.results[i].type === "Planet") {
+            opciones += `<option value="${datos.results[i].id}">${datos.results[i].name}</option>`
+          }
         }
+        document.getElementById("selector").innerHTML = opciones
+      })
 
-        fetch(`https://rickandmortyapi.com/api/location`)
-            .then((respuesta) => respuesta.json())
-            .then((datos) => {
-                let opciones = `<option selected="selected">Selecciona una opcion</option>`
-                for (let i = 0; i < datos.results.length; i++) {
-                    console.log(datos.results)
-                    if (datos.results[i].type === "Planet") {
-                        opciones += `<option value="${datos.results[i].id}">${datos.results[i].name}</option>`
-                        console.log(datos.results[i].id)
+    fetch(`https://rickandmortyapi.com/api/location`)
+      .then(respuesta => respuesta.json())
+      .then(datos => { })
+
+    function avisar(event) {
+      window.alert(event.target.value)
+    }
+
+    function pedir(event) {
+      fetch(`https://rickandmortyapi.com/api/location/${event.target.value}`)
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+          let arrayRespuesta = datos.residents
+          Promise.all(arrayRespuesta.map(url => fetch(url)))
+            .then(jsonRecibidos =>
+              Promise.all(jsonRecibidos.map(jsonrecibido => jsonrecibido.json())
+              )
+                .then(datosS => {
+                  let lista = ""
+                  datosS.forEach(
+                    (objeto) => {
+                      lista += `<li>${objeto.name}</li>`
                     }
-                    if (datos.results[i].id === avisar(event)) {
-                        promesa3 = [fetch(`${datos.results[i]["residents"]}`)
-                        .then((respuesta2) => respuesta2.json())]
-                        Promise.all([promesa3], [promesa2])
-                            .then((datos2) => {
-                                console.log(datos2)
-                                for (let j = 0; i < datos2.length; i++) {
-                                    opciones += `<li>${datos2[j]}</li>`
-                                }
-                            })
-                    }
-                }
+                  )
+                  document.getElementById("respuesta").innerHTML = `<ul>${lista}</ul>`
+                })
+            )
+        })
+    }
 
-                document.getElementById("selector").innerHTML = opciones
-            })
-
-        
-
-
-
-
-    </script>
+  </script>
 </body>
 
 </html>

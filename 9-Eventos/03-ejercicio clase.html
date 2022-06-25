@@ -23,14 +23,25 @@
             width: 87px;
         }
 
+        .producto {
+            display: flex;
+            align-items: center;
+        }
+
+
         h1 {
             font-size: 70px;
         }
 
+        h3 {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
         img {
             border-style: none;
-            display: block;
-            width: 100%;
+            width: 40px;
             height: auto;
         }
 
@@ -68,33 +79,36 @@
             <nav>
                 <h2>MENU</h2>
             </nav>
-            <h3><button onclick="modificar('-', 'manzana') id="buttonMenosManzana" class="buttonMenosManzana">-</button> Manzana<button onclick="modificar('+', 'manzana')
-                    id="buttonMasManzana" class="buttonMasManzana">+</button> ........................0,50€</h3>
-
-            <h3><button onclick="modificar('-', 'carne')" id="buttonMenosCarne" class="buttonMenosCarne">-</button>
-                Carne <button onclick="modificar('+', 'carne') id="buttonMasCarne" class="buttonMasCarne">+</button>..............................3,00€
+            <h3><img src="iconos/manzana.png">
+                <button onclick="modificar('-', 'manzana')" id="button" class="button">-</button> Manzana
+                <button onclick="modificar('+', 'manzana')" id=" button"
+                    class="button">+</button>........................0,50€
             </h3>
-
-            <h3><button id="buttonMenosLeche" class="buttonMenosLeche">-</button> Leche <button id="buttonMasLeche"
-                    class="buttonMasLeche">+</button>..............................1,00€</h3>
-
-            <h3><button id="buttonMenosPescado" class="buttonMenosPescado">-</button> Pescado <button
-                    id="buttonMasPescado" class=" buttonMasPescado">+</button>...........................4,50€</h3>
+            <h3><img src="iconos/carne.png">
+                <button onclick="modificar('-', 'carne')" id="button" class="button">-</button>Carne
+                <button onclick="modificar('+', 'carne')" id="button"
+                    class="button">+</button>..............................3,00€
+            </h3>
+            <h3><img src="iconos/leche.png">
+                <button onclick="modificar('-', 'leche')" id="button" class="button">-</button> Leche
+                <button onclick="modificar('+', 'leche')" id="button"
+                    class="button">+</button>..............................1,00€
+            </h3>
+            <h3><img src="iconos/pescado.png">
+                <button onclick="modificar('-', 'pescado')" id="button" class="button">-</button> Pescado
+                <button onclick="modificar('+', 'pescado')" id="button"
+                    class=" button">+</button>...........................4,50€
+            </h3>
         </div>
+
         <div id="cesta" class="cesta">
             <h2>CESTA</h2>
-            <p id="Manzana" class="Manzana">Manzanas</p>
-            <p id="Carne" class="Carne">Carne</p>
-            <p id="Leche" class="Leche">Leche</p>
-            <p id="Pescado" class="Pescado">Pescado</p>
-            <h3 id="Total" class="Total">Total</h3>
-
-
         </div>
+
     </section>
 
     <footer>
-        <h4>Gracias por confiar en Alimentación Alfonso</h4>
+        <h4>2022 &#169 ALIMENTACION ALFONSO Todos los derechos reservados <a href="#">aviso legal</a></h4>
     </footer>
 
 
@@ -132,30 +146,59 @@
         funcionalidad.*/
 
 
-        let manzanas = 0
+        let manzana = 0
         let carne = 0
         let leche = 0
         let pescado = 0
 
         function modificar(direccion, producto) {
-            if (producto === manzana) {
-                direccion === "+"
-                    ? manzana++
-                    : manzana--
-            } else if (producto === carne) {
-                direccion === "+"
-                    ? carne++
-                    : carne--
-            } if (producto === pescado) {
-                direccion === "+"
-                    ? pescado++
-                    : pescado--
+            if (producto === "manzana") {
+                direccion === "+" ? manzana++ : manzana--
+            } else if (producto === "carne") {
+                direccion === "+" ? carne++ : carne--
+            } else if (producto === "leche") {
+                direccion === "+" ? leche++ : leche--
             } else {
-                direccion === "+"
-                    ? leche++
-                    : leche--
+                direccion === "+" ? pescado++ : pescado--
             }
+            cesta()
         }
+        function cesta() {
+            let impresion = ""
+            if (manzana > 0) {
+                let manzanaPic = ""
+                for (let i = 0; i < manzana; i++) {
+                    manzanaPic += `<img src="iconos/manzana.png"/>`
+                }
+                impresion += `<p id="producto" class="producto">Manzanas - ${manzana} = ${parseFloat(manzana * 0.5)}€ ${manzanaPic}</p>`
+            }
+            if (carne > 0) {
+                let carnePic = ""
+                for (let i = 0; i < carne; i++) {
+                    carnePic += `<img src="iconos/carne.png"/>`
+                }
+                impresion += `<p id="producto" class="producto">Carne - ${carne} = ${carne * 3} €${carnePic}</p>`
+            }
+            if (leche > 0) {
+                let lechePic = ""
+                for (let i = 0; i < leche; i++) {
+                    lechePic += `<img src="iconos/leche.png"/>`
+                }
+                impresion += `<p id="producto" class="producto">Leche - ${leche} = ${leche * 1} €${lechePic}</p>`
+            }
+            if (pescado > 0) {
+                let pescadoPic = ""
+                for (let i = 0; i < pescado; i++) {
+                    pescadoPic += `<img src="iconos/pescado.png"/>`
+                }
+                impresion += `<p id="producto" class="producto">Pescado - ${pescado} = ${parseFloat(pescado * 4.5)} €${pescadoPic}</p>`
+            }
+
+            document.getElementById("cesta").innerHTML = `<h2>CESTA</h2>` + impresion
+
+        }
+
+
 
     </script>
 </body>
