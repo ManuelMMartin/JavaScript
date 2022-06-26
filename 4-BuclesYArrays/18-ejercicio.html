@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 18</title>
 </head>
+
 <body>
     <script>
         /*Ejercicio largo CALCULADORA*/
 
-        
-        
+        let operacion = 0
+        do {
+            let num1 = 0
+            let num2 = 0
+
+            operacion = parseInt(window.prompt(`
+                        *****************
+                        Calculadora
+                        *****************
+                        1. Suma
+                        2. Resta
+                        3. Multiplicación
+                        4. Potencia
+                        5. División
+                        6. Raíz
+                        7. Salir
+                        Introduce la opción deseada:`))
+
+            switch (operacion) {
+                case 1:
+                    window.alert(`Operacion seleccionada: suma
+                    ${num1 = parseInt(window.prompt('Introduce un numero: '))}+${num2 = parseInt(window.prompt('Introduce un numero: '))}=${num1 + num2}`)
+                    break
+                case 2:
+                    window.alert(`Operacion seleccionada: resta
+                    ${num1 = parseInt(window.prompt('Introduce un numero: '))}-${num2 = parseInt(window.prompt('Introduce un numero: '))}=${num1 - num2}`)
+                    break
+                case 3:
+                    window.alert(`Operacion seleccionada: multiplicacion
+                    ${num1 = parseInt(window.prompt('Introduce un numero: '))}x${num2 = parseInt(window.prompt('Introduce un numero: '))}=${num1 * num2}`)
+                    break
+                case 4:
+                    window.alert(`Operacion seleccionada: potencia
+                    ${num1 = parseInt(window.prompt('Introduce un numero: '))}^${num2 = parseInt(window.prompt('Introduce un numero: '))}=${num1 ** num2}`)
+                    break
+                case 5:
+                    window.alert(`Operacion seleccionada: division
+                    ${num1 = parseInt(window.prompt('Introduce un numero: '))}/${num2 = parseInt(window.prompt('Introduce un numero: '))}=${num1 / num2}`)
+                    break
+                case 6:
+                    window.alert(`Operacion seleccionada: raiz
+                    ${num1 = parseInt(window.prompt('Introduce un numero: '))}√=${Math.sqrt(num1)}`)
+                    break
+                case 7:
+                window.alert(`Gracias por utilizar nuestra calculadora, hasta otra.`)
+                    break
+                default:
+                    window.alert(`La operacion seleccionada no es ta disponible, vuelva a intentarlo.`)
+            }
+        } while (operacion != 7)
+
+
     </script>
 </body>
+
 </html>
