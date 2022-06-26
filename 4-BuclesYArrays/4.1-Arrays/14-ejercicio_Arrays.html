@@ -1,18 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 14</title>
 </head>
+
 <body>
     <script>
         /*14. Crear un array de 20 elementos donde cada elemento almacenará un valor entre 1
 y 9 (generarlos de forma aleatoria) y escribir, además del contenido del array, la
 cantidad de 1, cantidad de 2, cantidad de 3…, cantidad de 9 almacenados en ella.*/
-    
+
+
+        let array = []
+        for (let i = 0; i < 20; i++) {
+            array.push(aleatorio())
+
+        } console.log(array)
+        let num1 = 0; let num2 = 0; let num3 = 0; let num4 = 0; let num5 = 0; let num6 = 0; let num7 = 0; let num8 = 0; let num9 = 0
+
+        for (let j = 0; j < array.length; j++) {
+            switch (array[j]) {
+                case 1:
+                    num1++
+                    break;
+                case 2:
+                    num2++
+                    break;
+                case 3:
+                    num3++
+                    break;
+                case 4:
+                    num4++
+                    break;
+                case 5:
+                    num5++
+                    break;
+                case 6:
+                    num6++
+                    break;
+                case 7:
+                    num7++
+                    break;
+                case 8:
+                    num8++
+                    break;
+                case 9:
+                    num9++
+                    break;
+            }
+        }
+
+        console.log(`
+        En este array aleatorio hay: 
+        - ${num1} numero 1
+        - ${num2} numero 2
+        - ${num3} numero 3
+        - ${num4} numero 4
+        - ${num5} numero 5
+        - ${num6} numero 6
+        - ${num7} numero 7
+        - ${num8} numero 8
+        - ${num9} numero 9`)
+
+        function aleatorio() {
+            return (parseInt(Math.random() * 9 + 1))
+        }
+
 
     </script>
 </body>
+
 </html>

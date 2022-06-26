@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 13</title>
 </head>
+
 <body>
     <script>
         /* 13. Crea una lista de personajes de la saga Star Wars e introduce tres personajes.
@@ -14,8 +16,25 @@ b. Ordena la lista alfabéticamente.
 c. Pide al usuario que introduzca un personaje por teclado. Si existe indica en
 qué posición existe ese personaje, si no añadelo.
 d. Cuenta cuántos personajes contiene la lista.*/
-   
+
+        let personajesSW = ["Yoda", "Jar Jar Binks", "Anakin Skywalker"]
+        //a. Muestra la lista.
+        console.log(`a. Muestra la lista:  ${personajesSW}`)
+        //b. Ordena la lista alfabéticamente.
+        console.log(`b. Ordena la lista alfabéticamente: ${personajesSW.sort()}`)
+        //c. Pide al usuario que introduzca un personaje por teclado. Si existe indica en qué posición existe ese personaje, si no añadelo.
+        let newCharacter = window.prompt("introduce un personaje para comprobar si esta en el listado, si no lo añadiremos: ")
+        if (personajesSW.includes(newCharacter)) {
+            console.log(personajesSW.indexOf(newCharacter))
+        } else {
+            personajesSW.push(newCharacter)
+            console.log(personajesSW)
+        }
+        //d. Cuenta cuántos personajes contiene la lista.
+        console.log(`Esta lista contine ${personajesSW.length} personajes de la saga Star Wars`)
+
 
     </script>
 </body>
+
 </html>
